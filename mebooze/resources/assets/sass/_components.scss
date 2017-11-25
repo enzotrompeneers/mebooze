@@ -1,0 +1,44 @@
+$gray-90: #f2f2f2;
+$gray-85: #e6e6e6;
+$gray-80: #d9d9d9;  
+$gray-75: #cccccc;
+$gray-70: #bfbfbf;
+$gray-65: #b3b3b3;
+$gray-60: #a6a6a6;
+$gray-55: #999999;
+$gray-50: #8c8c8c;
+
+html, body { height: 100%; width: 100%; margin: 0; }
+
+.section {
+    &-header {
+        background-color: $gray-50;
+    }
+    &-about {
+        background-color: $gray-55;
+    }
+    &-feature {
+        background-color: $gray-60;
+    }
+    &-download {
+        background-color: $gray-65;
+    }
+    &-screenshot {
+        background-color: $gray-70;
+    }
+    &-guide {
+        background-color: $gray-75;
+    }
+    &-support {
+        background-color: $gray-80;
+    }
+    &-testimonials {
+        background-color: $gray-85;
+    }
+    &-team {
+        background-color: $gray-90;
+    }
+    &-footer {
+        background-color: $gray-50;
+    }
+}

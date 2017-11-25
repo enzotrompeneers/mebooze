@@ -1,43 +1,64 @@
 @extends('layouts.master')
 
 @section('content')
-    <header>
+    <div class="section-header">
 		<div class="grid-container text-center">
 			<h1>MeBooze</h1>
 		</div>
-	</header>
+	</div>
 
-    <div class="grid-container text-center">
-        <div class="grid-x grid-margin-x grid-margin-y grid-padding-x grid-padding-y"> 
-			<div class="cell medium-6 large-4">
-				<b>Groot scherm</b><br>
-				kolomgrootte: 4 <br>
-				Foundation grid: 12 <br>
-				4 / 12 = 3 <br>
-				3 kolommen per rij
-			</div>
-
-			<div class="cell medium-6 large-4">
-				<b>Middelmatig scherm</b><br>
-				kolomgrootte: 6 <br>
-				Foundation grid: 12 <br>
-				6 / 12 = 2 <br>
-				2 kolommen per rij
-			</div>
-
-			<div class="cell medium-6 large-4">
-				<b>Klein scherm</b><br>
-				kolomgrootte: 12 <br>
-				Foundation grid: 12 <br>
-				12 / 12 = 1 <br>
-				1 kolom per rij
-			</div>
-		</div>
+    <div class="section-about">
+        <div class="grid-container text-center">
+            <h1>About App</h1>
+        </div>
     </div>
 
-    <footer>
-		<div class="grid-container text-center">
-			<h1>MeBooze</h1>
-		</div>
-	</footer>
+    <div class="section-feature">
+        <div class="grid-container text-center">
+            <h1>Our Features</h1>
+        </div>
+    </div>
+
+    <div class="section-download">
+        <div class="grid-container text-center">
+            <h1>Download the app</h1>
+        </div>
+    </div>
+
+    <div class="section-screenshot">
+        <div class="grid-container text-center">
+            <h1>Screenshots</h1>
+        </div>
+    </div>
+
+    <div class="section-guide">
+        <div class="grid-container text-center">
+            <h1>How it works?</h1>
+        </div>
+    </div>
+
+    <div class="section-support">
+        <div class="grid-container text-center">
+            <h1>App support</h1>
+        </div>
+    </div>
+
+    <div class="section-testimonials">
+        <div class="grid-container text-center">
+            <h1>Testimonials</h1>
+        </div>
+    </div>
+
+    <div class="section-team">
+        <div class="grid-container text-center">
+            <h1>Mebooze Team</h1>
+        </div>
+    </div>
+
+    <div class="section-footer">
+        <div class="grid-container text-center">
+            <h1>Footer</h1>
+        </div>
+    </div>
+    
 @stop

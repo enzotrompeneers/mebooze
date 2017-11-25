@@ -8464,3 +8464,50 @@ a.thumbnail image {
   }
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.section-header {
+  background-color: #8c8c8c;
+}
+
+.section-about {
+  background-color: #999999;
+}
+
+.section-feature {
+  background-color: #a6a6a6;
+}
+
+.section-download {
+  background-color: #b3b3b3;
+}
+
+.section-screenshot {
+  background-color: #bfbfbf;
+}
+
+.section-guide {
+  background-color: #cccccc;
+}
+
+.section-support {
+  background-color: #d9d9d9;
+}
+
+.section-testimonials {
+  background-color: #e6e6e6;
+}
+
+.section-team {
+  background-color: #f2f2f2;
+}
+
+.section-footer {
+  background-color: #8c8c8c;
+}
+
