@@ -14,4 +14,4 @@ Smart cocktail shaker
 
 ### api
 [mebooze backend api](https://github.com/enzotrompeneers/mebooze-backend)  
-
+[api ERD](http://www.laravelsd.com/share/p5EqMj)  
