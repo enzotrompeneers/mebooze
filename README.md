@@ -12,7 +12,7 @@ Installation & Guide
 
 ## Laravel Backend API
 ### Backend API
-[Backend API](https://github.com/enzotrompeneers/mebooze/mebooze-backend)  
+[Backend API](https://github.com/enzotrompeneers/mebooze/tree/master/mebooze-backend)  
 
 ### Backend ERD
 [Backend ERD](http://www.laravelsd.com/share/p5EqMj)  
