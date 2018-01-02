@@ -3,12 +3,13 @@ Smart cocktail shaker
 
 ## Ionic Application
 Installation & Guide  
+[MeBooze App (coming)](https://github.com/enzotrompeneers/mebooze/tree/master/mebooze)  
 
 ## Kickstarter Video
-[video](https://github.com/enzotrompeneers/mebooze/tree/master/kickstarter-video) 
+[Kickstarter Video (coming)](https://github.com/enzotrompeneers/mebooze/tree/master/kickstarter-video) 
 
 ## Hardware Progress Images
-[images](https://github.com/enzotrompeneers/mebooze/tree/master/hardware-progress-images)  
+[Images (coming)](https://github.com/enzotrompeneers/mebooze/tree/master/hardware-progress-images)  
 
 ## Laravel Backend API
 ### Backend API
@@ -18,4 +19,4 @@ Installation & Guide
 [Backend ERD](http://www.laravelsd.com/share/p5EqMj)  
 
 ## Arduino 
-[arduino](https://github.com/enzotrompeneers/mebooze/tree/master/arduino)  
+[Arduino (coming)](https://github.com/enzotrompeneers/mebooze/tree/master/arduino)  
