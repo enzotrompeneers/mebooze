@@ -8,37 +8,53 @@ $gray-60: #a6a6a6;
 $gray-55: #999999;
 $gray-50: #8c8c8c;
 
-html, body { height: 100%; width: 100%; margin: 0; }
+html, body { 
+    height: 100%; 
+    width: 100%; 
+    margin: 0; 
+}
 
 .section {
+    height: 40%;
+
     &-header {
         background-color: $gray-50;
+        @extend .section;
     }
     &-about {
         background-color: $gray-55;
+        @extend .section;
     }
     &-feature {
         background-color: $gray-60;
+        @extend .section;
     }
     &-download {
         background-color: $gray-65;
+        @extend .section;
     }
     &-screenshot {
         background-color: $gray-70;
+        @extend .section;
     }
     &-guide {
         background-color: $gray-75;
+        @extend .section;
     }
     &-support {
         background-color: $gray-80;
+        @extend .section;
     }
     &-testimonials {
         background-color: $gray-85;
+        @extend .section;
     }
     &-team {
         background-color: $gray-90;
+        @extend .section;
     }
     &-footer {
         background-color: $gray-50;
+        @extend .section;
     }
 }

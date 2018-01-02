@@ -8471,6 +8471,20 @@ body {
   margin: 0;
 }
 
+.section,
+.section-header,
+.section-about,
+.section-feature,
+.section-download,
+.section-screenshot,
+.section-guide,
+.section-support,
+.section-testimonials,
+.section-team,
+.section-footer {
+  height: 40%;
+}
+
 .section-header {
   background-color: #8c8c8c;
 }
