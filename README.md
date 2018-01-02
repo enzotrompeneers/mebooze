@@ -5,10 +5,10 @@ Smart cocktail shaker
 Installation & Guide  
 
 ## Kickstarter Video
-[video](https://github.com/enzotrompeneers/mebooze/kickstarter-video) 
+[video](https://github.com/enzotrompeneers/mebooze/tree/master/kickstarter-video) 
 
 ## Hardware Progress Images
-[images](https://github.com/enzotrompeneers/mebooze/hardware-progress-images)  
+[images](https://github.com/enzotrompeneers/mebooze/tree/master/hardware-progress-images)  
 
 ## Laravel Backend API
 ### Backend API
@@ -18,4 +18,4 @@ Installation & Guide
 [Backend ERD](http://www.laravelsd.com/share/p5EqMj)  
 
 ## Arduino 
-[arduino](https://github.com/enzotrompeneers/meboozeh/arduino)  
+[arduino](https://github.com/enzotrompeneers/mebooze/tree/master/arduino)  
