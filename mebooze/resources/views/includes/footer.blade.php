@@ -1,2 +1,0 @@
-<script src="/js/app.js"></script>
-<script> $(document).foundation();</script>

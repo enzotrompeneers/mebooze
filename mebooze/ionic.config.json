@@ -1,0 +1,8 @@
+{
+  "name": "mebooze",
+  "app_id": "80070f94",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

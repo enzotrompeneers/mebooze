@@ -1,17 +1,21 @@
 # mebooze
 Smart cocktail shaker
 
-### website
+## Ionic Application
+Installation & Guide  
 
-### init website
-- yarn install (install all depencies for project)  
-- yarn run watch (run script watch for autocompiling scss)  
-- php artisan serve (start php built-in dev server)  
-- installation foundation: [Setup Foundation in Laravel](https://laracasts.com/discuss/channels/tips/using-foundation-630-with-laravel-54)  
+## Kickstarter Video
+[video](https://github.com/enzotrompeneers/mebooze/kickstarter-video) 
 
-### wireframes website
-[Github Wireframes website](https://github.com/enzotrompeneers/mebooze/commit/39923c389a5ac352dab8d46ce6cf36649aea1853)  
+## Hardware Progress Images
+[images](https://github.com/enzotrompeneers/mebooze/hardware-progress-images)  
 
-### api
-[mebooze backend api](https://github.com/enzotrompeneers/mebooze-backend)  
-[api ERD](http://www.laravelsd.com/share/p5EqMj)  
+## Laravel Backend API
+### Backend API
+[Backend API](https://github.com/enzotrompeneers/mebooze/mebooze-backend)  
+
+### Backend ERD
+[Backend ERD](http://www.laravelsd.com/share/p5EqMj)  
+
+## Arduino 
+[arduino](https://github.com/enzotrompeneers/meboozeh/arduino)  
