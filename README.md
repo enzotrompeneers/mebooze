@@ -9,7 +9,7 @@ Installation & Guide
 [Kickstarter Video (coming)](https://github.com/enzotrompeneers/mebooze/tree/master/kickstarter-video) 
 
 ## Hardware Progress Images
-[Images (coming)](https://github.com/enzotrompeneers/mebooze/tree/master/hardware-progress-images)  
+[Images](https://github.com/enzotrompeneers/mebooze/tree/master/hardware-progress-images)  
 
 ## Laravel Backend API
 ### Backend API
