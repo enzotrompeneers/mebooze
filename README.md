@@ -1,4 +1,4 @@
-# mebooze
+# MeBooze
 Smart cocktail shaker
 
 ## Ionic Application
@@ -14,7 +14,8 @@ Installation & Guide
 ## Laravel Backend API
 ### Backend API
 [Backend API](https://github.com/enzotrompeneers/mebooze/tree/master/mebooze-backend)  
-
+### Cocktail database
+[database](https://github.com/enzotrompeneers/mebooze/tree/master/cocktail-database)  
 ### Backend ERD
 [Backend ERD](http://www.laravelsd.com/share/p5EqMj)  
 
