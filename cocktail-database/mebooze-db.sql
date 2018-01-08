@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.20)
 # Database: mebooze
-# Generation Time: 2018-01-07 21:55:17 +0000
+# Generation Time: 2018-01-08 11:04:49 +0000
 # ************************************************************
 
 
@@ -84,6 +84,7 @@ CREATE TABLE `ingredients` (
   `amount` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `unit` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `cocktail_id` int(10) unsigned NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `ingredients_cocktail_id_foreign` (`cocktail_id`),
   CONSTRAINT `ingredients_cocktail_id_foreign` FOREIGN KEY (`cocktail_id`) REFERENCES `cocktails` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -92,23 +93,23 @@ CREATE TABLE `ingredients` (
 LOCK TABLES `ingredients` WRITE;
 /*!40000 ALTER TABLE `ingredients` DISABLE KEYS */;
 
-INSERT INTO `ingredients` (`id`, `name`, `amount`, `unit`, `cocktail_id`)
+INSERT INTO `ingredients` (`id`, `name`, `amount`, `unit`, `cocktail_id`, `image`)
 VALUES
-	(1,'vodka','3','cl',1),
-	(2,'peach liqueur','3','cl',1),
-	(3,'cranberry juice','4','cl',1),
-	(4,'orange juice','5','cl',1),
-	(5,'grapefruit juice','5','cl',1),
-	(6,'cherry','1','fruit',1),
-	(7,'white rum','6','cl',2),
-	(8,'pineapple juice','6','cl',2),
-	(9,'coconot milk','6','cl',2),
-	(10,'liquid cream','2','cl',2),
-	(11,'pineapple slice','1','fruit',2),
-	(12,'lime juice','5','cl',3),
-	(13,'grapefruit juice','3','cl',3),
-	(14,'agave syrup','3','cl',3),
-	(15,'lime slice','1','fruit',3);
+	(1,'vodka','30','ml',1,'vodka.jpg'),
+	(2,'peach liqueur','30','ml',1,'peach-liqueur.jpg'),
+	(3,'cranberry juice','40','ml',1,'cranberry-juice.jpg'),
+	(4,'orange juice','50','ml',1,'orange-juice.jpg'),
+	(5,'grapefruit juice','50','ml',1,'grapefruit-juice.jpg'),
+	(6,'cherry','1','fruit',1,'cherry.jpg'),
+	(7,'white rum','60','ml',2,'white-rum.jpg'),
+	(8,'pineapple juice','60','ml',2,'pinapple-juice.jpg'),
+	(9,'coconot milk','60','ml',2,'coconot-milk.jpg'),
+	(10,'liquid cream','20','ml',2,'liquid-cream.jpg'),
+	(11,'pinapple slice','1','fruit',2,'pinapple-slice.jpg'),
+	(12,'lime juice','50','ml',3,'lime-juice.jpg'),
+	(13,'grapefruit juice','30','ml',3,'grapefruit-juice.jpg'),
+	(14,'agave syrup','30','ml',3,'agave-syrup.jpg'),
+	(15,'lime slice','1','fruit',3,'lime-slice.jpg');
 
 /*!40000 ALTER TABLE `ingredients` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -131,10 +132,10 @@ LOCK TABLES `migrations` WRITE;
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`)
 VALUES
-	(15,'2017_12_28_132534_create_cocktails_table',1),
-	(16,'2017_12_28_132534_create_ingredients_table',1),
-	(17,'2018_01_07_214112_create_categories_table',2),
-	(18,'2018_01_07_214122_create_foreign_keys',2);
+	(19,'2017_12_28_132534_create_cocktails_table',1),
+	(20,'2018_01_07_214112_create_categories_table',1),
+	(21,'2018_01_08_104831_create_ingredients_table',1),
+	(22,'2018_01_08_104841_create_foreign_keys',1);
 
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
