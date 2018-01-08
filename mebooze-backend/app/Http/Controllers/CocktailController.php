@@ -25,7 +25,8 @@ class CocktailController extends Controller
             'categories.name as category_name',
             'ingredients.name as ingredient_name',
             'ingredients.unit as ingredient_unit',
-            'ingredients.amount as ingredient_amount'
+            'ingredients.amount as ingredient_amount',
+            'ingredients.image as ingredient-image'
             )
                 ->join('categories', 'categories.id', '=', 'cocktails.id')
                 ->join('ingredients', 'ingredients.cocktail_id', '=', 'cocktails.id')

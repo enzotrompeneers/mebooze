@@ -13,6 +13,7 @@ class CreateIngredientsTable extends Migration {
 			$table->string('amount', 255);
 			$table->string('unit', 255);
 			$table->integer('cocktail_id')->unsigned();
+			$table->string('image', 255);
 		});
 	}
 
