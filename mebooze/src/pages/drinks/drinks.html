@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Drinks</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-item *ngFor="let drinks of data" (click)="showIngredientByDrink(drinks.id)">
+    {{ drinks.name }}
+  </button>
+</ion-content>
