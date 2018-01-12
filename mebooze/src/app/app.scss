@@ -182,17 +182,22 @@ $blue: #4f6d7a;
 }
 
 ion-icon {
-    background-image: url('../assets/imgs/icons/hamburger_menu.svg');
-    background-position-y: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 50%;
+    &.hamburger-menu {
+        background-image: url('../assets/imgs/icons/hamburger_menu.svg');
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 50%;
+
+        &.white {
+            background-image: url('../assets/imgs/icons/hamburger_menu_white.svg');
+        }
+    }
 }
 
-ion-app.md {
-    .scroll-content {
-        padding-top: 50px !important;
-    }
+.scroll-content, .fixed-content {
+    padding-top: 25px !important;
+    margin-top: 75px !important;
 }
 
 ion-title {
@@ -248,10 +253,16 @@ ion-title, .title-ios {
     padding: 0 11px 0 0;
     span {
         text-indent: -99999px;
-        background-image: url('../assets/imgs/icons/bluetooth-indicator.svg');
+        background-image: url('../assets/imgs/icons/bluetooth.svg');
         background-repeat: no-repeat;
         background-size: contain;
         height: 100%;
         width: 100%;
+    }
+
+    &.white {
+        span {
+            background-image: url('../assets/imgs/icons/bluetooth-white.svg');
+        }
     }
 }

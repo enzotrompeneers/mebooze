@@ -2,7 +2,7 @@
 
   <ion-navbar>
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+      <ion-icon class="hamburger-menu" name="menu"></ion-icon>
     </button>
     <ion-title>Mebooze</ion-title>
     <ion-buttons end>
@@ -22,11 +22,13 @@
     <img src="../assets/imgs/drinks/{{ data && data.cocktail.image }}" alt="{{ data && data.cocktail.name }}">
   </div>
   <h2>Ingredients</h2>
-  <div ion-item class="ingredients" *ngFor="let ingredients of data && data.ingredients">
-    <p>{{ ingredients.name }}</p>
-    <p class="amount">{{ ingredients.amount }}{{ ingredients.unit }}</p>
-    <div class="overlay"></div>
-    <img src="{{ ingredients.image }}" alt="{{ ingredients.name }}">
+  <div class="ingredients-wrapper">
+      <div ion-item class="ingredients" *ngFor="let ingredients of data && data.ingredients">
+        <p>{{ ingredients.name }}</p>
+        <p class="amount">{{ ingredients.amount }}{{ ingredients.unit }}</p>
+        <div class="overlay"></div>
+        <img src="../assets/imgs/ingredients/{{ ingredients.image }}" alt="{{ ingredients.name }}">
+      </div>
   </div>
   <button (click)="showProcessByIngredient(id)">
     Shake to start
