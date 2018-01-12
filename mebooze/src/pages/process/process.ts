@@ -15,6 +15,7 @@ export class ProcessPage {
   id: number;
   steps: number = 1;
   scale: number;
+  totalLiquid: number = 200;
 
   peripheral: any = {};
   statusMessage: string;
@@ -43,7 +44,7 @@ export class ProcessPage {
       (error) => this.showAlert('Unexpected error', error)
     );
   }
-  
+
   onScaleChange(buffer) {
     var data = new Uint8Array(buffer);
     this.ngZone.run(() => {
@@ -68,14 +69,16 @@ export class ProcessPage {
   }
 
   process(steps) {
-   
-    //let input = 0;
-    //let totalLiquid = this.data && this.data[0].ingredient_amount;
+    document.getElementById('btnStep').style.visibility='hidden';
+    
     let totalIngredients = this.data && this.data.ingredients.length;
     let text = "";
     let ingredient_amount = this.data && this.data.ingredients[steps-1].amount;
     let ingredient_unit = this.data && this.data.ingredients[steps-1].unit;
     let ingredient_name = this.data && this.data.ingredients[steps-1].name;
+    
+    let totalLiquid = ingredient_amount;
+
     console.log(steps + " " + totalIngredients);
     if(steps < totalIngredients) {
       
@@ -84,13 +87,11 @@ export class ProcessPage {
         + ingredient_amount + " " + ingredient_unit + " " + ingredient_name;
       
 
-      /*
-      while(steps < totalIngredients) {
-        text += "<br>Step " + steps + " ingre: " + totalLiquid;
-        steps++;
-        document.getElementById("steps").innerHTML = text;
+      
+      while(this.scale < totalLiquid) {
+        document.getElementById('btnStep').style.visibility='show';
       }
-      */
+      
 
     } else {
       text= "Add topping: " + ingredient_name + "<br><b>Cocktail voltooid</b>";
