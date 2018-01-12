@@ -11,7 +11,7 @@ import { CocktailService } from '../../services/cocktail/cocktail';
 export class ProcessPage {
   data: any;
   id: number;
-  steps: number = 0;
+  steps: number = 1;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private cocktailService: CocktailService) {
     this.id = this.navParams.get('id');
@@ -23,27 +23,35 @@ export class ProcessPage {
   }
 
   process(steps) {
-    console.log(steps);
+   
     //let input = 0;
     //let totalLiquid = this.data && this.data[0].ingredient_amount;
-    //let totalIngredients = this.data && this.data.length;
+    let totalIngredients = this.data && this.data.ingredients.length;
     let text = "";
+    let ingredient_amount = this.data && this.data.ingredients[steps-1].amount;
+    let ingredient_unit = this.data && this.data.ingredients[steps-1].unit;
+    let ingredient_name = this.data && this.data.ingredients[steps-1].name;
+    console.log(steps + " " + totalIngredients);
+    if(steps < totalIngredients) {
+      
+      this.steps++;
+      text = "<h2>Step " + steps + "</h2><br>"
+        + ingredient_amount + " " + ingredient_unit + " " + ingredient_name;
+      
 
-    let ingredient_amount = this.data && this.data.ingredients[steps].amount;
-    let ingredient_unit = this.data && this.data.ingredients[steps].unit;
-    let ingredient_name = this.data && this.data.ingredients[steps].name;
-    this.steps++;
-    text = "<h2>Step " + steps + "</h2><br>"
-      + ingredient_amount + " " + ingredient_unit + " " + ingredient_name;
-    document.getElementById("steps").innerHTML = text;
-
-    /*
-    while(steps < totalIngredients) {
-      text += "<br>Step " + steps + " ingre: " + totalLiquid;
-      steps++;
-      document.getElementById("steps").innerHTML = text;
+      /*
+      while(steps < totalIngredients) {
+        text += "<br>Step " + steps + " ingre: " + totalLiquid;
+        steps++;
+        document.getElementById("steps").innerHTML = text;
+      }
+      */
+      
+    } else {
+      text= "Add topping: " + ingredient_name + "<br><b>Cocktail voltooid</b>";
+      document.getElementById('btnStep').style.visibility='hidden';
     }
-    */
+    document.getElementById("steps").innerHTML = text;
   }
 
   ionViewDidLoad() {
