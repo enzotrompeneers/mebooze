@@ -10,6 +10,7 @@ import { BleConnectPage } from '../pages/ble-connect/ble-connect';
 import { CategoriesPage } from '../pages/categories/categories';
 import { DrinksPage } from '../pages/drinks/drinks';
 import { IngredientsPage } from '../pages/ingredients/ingredients';
+import { ProcessPage } from '../pages/process/process';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,7 +25,8 @@ import { CocktailService } from '../services/cocktail/cocktail';
     BleConnectPage,
     CategoriesPage,
     DrinksPage,
-    IngredientsPage
+    IngredientsPage,
+    ProcessPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { CocktailService } from '../services/cocktail/cocktail';
     BleConnectPage,
     CategoriesPage,
     DrinksPage,
-    IngredientsPage
+    IngredientsPage,
+    ProcessPage
   ],
   providers: [
     StatusBar,

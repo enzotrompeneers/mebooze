@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>process</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <!--
+    <div ion-item *ngFor="let ingredients of data">
+      <p>{{ ingredients.ingredient_name }}</p>
+      <p>{{ ingredients.ingredient_unit }} {{ ingredients.ingredient_amount }}</p>
+    </div>
+  -->
+
+    <div>
+      <h1>{{ data && data[id-1].cocktail_name }}</h1>
+      <p id="steps"></p>
+      <button (click)="process(steps)">
+          Step {{steps}}
+      </button>
+      
+      
+    </div>
+  </ion-content>
