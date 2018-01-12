@@ -70,7 +70,7 @@ export class ProcessPage {
 
   process(steps) {
     document.getElementById('btnStep').style.visibility='hidden';
-    
+
     let totalIngredients = this.data && this.data.ingredients.length;
     let text = "";
     let ingredient_amount = this.data && this.data.ingredients[steps-1].amount;
@@ -87,8 +87,8 @@ export class ProcessPage {
         + ingredient_amount + " " + ingredient_unit + " " + ingredient_name;
       
 
-      
-      while(this.scale < totalLiquid) {
+      console.log("scale is: " + this.scale + " and liquidtotal is " + totalLiquid);
+      if(this.scale > totalLiquid) {
         document.getElementById('btnStep').style.visibility='show';
       }
       
