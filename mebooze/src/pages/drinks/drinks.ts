@@ -16,7 +16,7 @@ export class DrinksPage {
     let id = this.navParams.get('id');
     this.cocktailService.getDrinkByCategory(id).map(res => res.json()).subscribe(
       data => {
-        this.data = data;
+        this.data = data.data;
       }
     );
   }

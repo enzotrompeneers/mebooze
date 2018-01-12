@@ -1,3 +1,83 @@
 page-ingredients {
+    ion-content {
+        .scroll-content {
+            .heading {
+                padding-left: 0;
+                height: 180px;
+                border-radius: 5px;
+                box-shadow: 0px 1px 3.75px 1.25px rgba(57, 62, 65, 0.25);
+                .item-inner {
+                    padding-right: 0;
+                    ion-label {
+                        margin-right: 0;
 
+                        h1 {
+                            text-align: center;
+                            font-family: 'Source Sans Pro';
+                            font-weight: bold;
+                            font-size: 2em;
+                            color: white;
+                            text-transform: uppercase;
+                        }
+
+                        img {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            z-index: -2;
+                        }
+                    }
+                }
+            }
+            h2 {
+                margin: 35px 0 13px 0;
+                font-family: 'Source Sans Pro';
+                font-weight: 600;
+                font-style: normal;
+                font-size: 1.3em;
+                color: $blue;
+            }
+            .ingredients {
+                padding-left: 0;
+                width: calc(50% - 10px);
+                float: left;
+                height: 100px;
+                border-radius: 5px;
+                box-shadow: 0px 1px 3.75px 1.25px rgba(57, 62, 65, 0.25);
+                margin-bottom: 20px;
+
+                text-align: center;
+
+                &:nth-child(odd) {
+                    margin-right: 20px !important;
+                }
+
+                .item-inner {
+                    border: none !important;
+                    padding-right: 0;
+
+                    .input-wrapper {
+                        ion-label {
+                            margin-right: 0;
+
+                            p {
+                                text-transform: uppercase;
+                                font-family: 'Source Sans Pro';
+                                font-weight: 600;
+                                font-style: normal;
+                                font-size: 1em;
+                                color: white;
+                                &.amount {
+                                    color: black;
+                                    text-transform: lowercase;
+                                    color: #f46036;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

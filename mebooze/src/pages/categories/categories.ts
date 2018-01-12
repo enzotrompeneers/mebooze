@@ -15,7 +15,7 @@ export class CategoriesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, private cocktailService: CocktailService) {
     this.cocktailService.getCategories().map(res => res.json()).subscribe(
       data => {
-        this.data = data;
+        this.data = data.data;
       }
     );
   }

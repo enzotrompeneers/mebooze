@@ -4,11 +4,18 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Drinks</ion-title>
+    <ion-buttons end>
+      <button ion-button>
+        Scan
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <button ion-item *ngFor="let drinks of data" (click)="showIngredientByDrink(drinks.id)">
-    {{ drinks.name }}
+    <h1>{{ drinks.name }}</h1>
+    <div class="overlay"></div>
+    <img src="../assets/imgs/drinks/thumbnails/{{ drinks.image }}" alt="{{ drinks.name }}">
   </button>
 </ion-content>

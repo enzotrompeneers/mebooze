@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CocktailService } from '../../services/cocktail/cocktail';
 
-/**
- * Generated class for the ProcessPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { CocktailService } from '../../services/cocktail/cocktail';
 
 @IonicPage()
 @Component({
@@ -20,12 +14,10 @@ export class ProcessPage {
   steps: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private cocktailService: CocktailService) {
-    let id = this.navParams.get('id');
-    this.id = id;
-
-    this.cocktailService.getIngredientsByDrink(id).map(res => res.json()).subscribe(
+    this.id = this.navParams.get('id');
+    this.cocktailService.getIngredientsByDrink(this.id).map(res => res.json()).subscribe(
       data => {
-        this.data = data;
+        this.data = data.data;
       }
     );
   }
@@ -37,14 +29,14 @@ export class ProcessPage {
     //let totalIngredients = this.data && this.data.length;
     let text = "";
 
-    let ingredient_amount = this.data && this.data[steps].ingredient_amount;
-    let ingredient_unit = this.data && this.data[steps].ingredient_unit;
-    let ingredient_name = this.data && this.data[steps].ingredient_name;
+    let ingredient_amount = this.data && this.data.ingredients[steps].amount;
+    let ingredient_unit = this.data && this.data.ingredients[steps].unit;
+    let ingredient_name = this.data && this.data.ingredients[steps].name;
     this.steps++;
     text = "<h2>Step " + steps + "</h2><br>"
-          + ingredient_amount + " " + ingredient_unit + " " + ingredient_name;
+      + ingredient_amount + " " + ingredient_unit + " " + ingredient_name;
     document.getElementById("steps").innerHTML = text;
-    
+
     /*
     while(steps < totalIngredients) {
       text += "<br>Step " + steps + " ingre: " + totalLiquid;

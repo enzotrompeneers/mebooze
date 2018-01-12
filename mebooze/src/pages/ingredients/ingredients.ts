@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CocktailService } from '../../services/cocktail/cocktail';
+
 import { ProcessPage } from '../process/process';
 
 /**
@@ -18,26 +19,24 @@ import { ProcessPage } from '../process/process';
 export class IngredientsPage {
 
   data: any;
-  id: number;
-  
+  id: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, private cocktailService: CocktailService) {
-    let id = this.navParams.get('id');
-    this.id = id;
-    this.cocktailService.getIngredientsByDrink(id).map(res => res.json()).subscribe(
+    this.id = this.navParams.get('id');
+    this.cocktailService.getIngredientsByDrink(this.id).map(res => res.json()).subscribe(
       data => {
-        this.data = data;
+        this.data = data.data;
       }
     );
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad IngredientsPage');
   }
 
   showProcessByIngredient(id) {
     this.navCtrl.push(ProcessPage, {
       id: id
     });
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad IngredientsPage');
   }
 
 }

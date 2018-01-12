@@ -14,14 +14,19 @@
 
 
 <ion-content padding>
-  <div ion-item *ngFor="let ingredients of data">
-    <p>{{ ingredients.ingredient_name }}</p>
-    <p>{{ ingredients.ingredient_unit }} {{ ingredients.ingredient_amount }}</p>
+  <div ion-item class="heading">
+    <h1>{{ data && data.cocktail.name }}</h1>
+    <div class="overlay"></div>
+    <img src="../assets/imgs/drinks/{{ data && data.cocktail.image }}" alt="{{ data && data.cocktail.name }}">
   </div>
-  <br>
-
-
+  <h2>Ingredients</h2>
+  <div ion-item class="ingredients" *ngFor="let ingredients of data && data.ingredients">
+    <p>{{ ingredients.name }}</p>
+    <p class="amount">{{ ingredients.amount }}{{ ingredients.unit }}</p>
+    <div class="overlay"></div>
+    <img src="{{ ingredients.image }}" alt="{{ ingredients.name }}">
+  </div>
   <button (click)="showProcessByIngredient(id)">
-      Shake to start
+    Shake to start
   </button>
 </ion-content>

@@ -13,17 +13,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let device of devices" (click)="deviceSelected(device)">
-      <h2>{{ device.name || 'Unnamed' }}</h2>
-      <p>{{ device.id }}</p>
-      <p>RSSI: {{ device.rssi }}</p>
-    </button>
-  </ion-list>
+  <div>
+    <h2>Available devices</h2>
+    <ion-list>
+      <button ion-item>
+        <h2>Bluetooth</h2>
+      </button>
+      <button ion-item *ngFor="let device of devices" (click)="deviceSelected(device)">
+        <h2>{{ device.name || 'Unnamed' }}</h2>
+        <p>{{ device.id }}</p>
+        <p>RSSI: {{ device.rssi }}</p>
+      </button>
+    </ion-list>
+  </div>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <p>{{ statusMessage }}</p>
-  </ion-toolbar>
-</ion-footer>

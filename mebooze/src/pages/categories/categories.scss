@@ -1,3 +1,44 @@
 page-categories {
-    
+    .scroll-content {
+        button {
+            padding: 0;
+            height: 180px;
+
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+
+            box-shadow: 0px 1px 3.75px 1.25px rgba(57, 62, 65, 0.25);
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .item-inner {
+                border: none !important;
+                padding: 0;
+
+                .input-wrapper {
+                    ion-label {
+                        margin-right: 0;
+                        h1 {
+                            font-family: 'Source Sans Pro';
+                            font-weight: bold;
+                            font-size: 2em;
+                            color: white;
+                            text-transform: uppercase;
+                        }
+
+                        img {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            z-index: -2;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
