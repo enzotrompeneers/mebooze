@@ -15,7 +15,8 @@ export class ProcessPage {
   id: number;
   steps: number = 1;
   scale: number;
-  totalLiquid: number = 200;
+  totalLiquid: number;
+  percent: number;
 
   peripheral: any = {};
   statusMessage: string;
@@ -69,35 +70,26 @@ export class ProcessPage {
   }
 
   process(steps) {
-    document.getElementById('btnStep').style.visibility='hidden';
-
     let totalIngredients = this.data && this.data.ingredients.length;
     let text = "";
     let ingredient_amount = this.data && this.data.ingredients[steps-1].amount;
     let ingredient_unit = this.data && this.data.ingredients[steps-1].unit;
     let ingredient_name = this.data && this.data.ingredients[steps-1].name;
-    
-    let totalLiquid = ingredient_amount;
+    this.totalLiquid = ingredient_amount;
 
     console.log(steps + " " + totalIngredients);
+
     if(steps < totalIngredients) {
-      
       this.steps++;
       text = "<h2>Step " + steps + "</h2><br>"
         + ingredient_amount + " " + ingredient_unit + " " + ingredient_name;
-      
-
-      console.log("scale is: " + this.scale + " and liquidtotal is " + totalLiquid);
-      if(this.scale > totalLiquid) {
-        document.getElementById('btnStep').style.visibility='show';
-      }
-      
-
+        
     } else {
       text= "Add topping: " + ingredient_name + "<br><b>Cocktail voltooid</b>";
       document.getElementById('btnStep').style.visibility='hidden';
     }
     document.getElementById("steps").innerHTML = text;
+    document.getElementsByClassName('water')[0].style.top = 250 / this.totalLiquid * this.scale;
   }
 
   ionViewDidLoad() {
