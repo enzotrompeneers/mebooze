@@ -2,7 +2,6 @@ import { Component, NgZone } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { BLE } from '@ionic-native/ble';
 
-
 import { ScaleService } from '../../services/scale/scale';
 
 @Component({
