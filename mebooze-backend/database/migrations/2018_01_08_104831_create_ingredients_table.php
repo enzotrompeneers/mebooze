@@ -9,11 +9,10 @@ class CreateIngredientsTable extends Migration {
 	{
 		Schema::create('ingredients', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('name', 255);
 			$table->string('amount', 255);
 			$table->string('unit', 255);
 			$table->integer('cocktail_id')->unsigned();
-			$table->string('image', 255);
+			$table->integer('product_id')->unsigned();
 		});
 	}
 

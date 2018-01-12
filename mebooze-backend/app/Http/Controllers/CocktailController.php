@@ -15,25 +15,22 @@ class CocktailController extends Controller
     // all cocktails with id and name for search purpose
     public function index() {
         $allCocktails = Cocktail::select('id', 'name', 'image')->get();
-        return response::json($allCocktails);
+        return response::json(['data' => $allCocktails]);
     }
  
     public function show($id) {
-        $showCocktail = Cocktail::select(
-            'cocktails.name as cocktail_name', 
-            'cocktails.image', 
-            'categories.name as category_name',
-            'ingredients.name as ingredient_name',
-            'ingredients.unit as ingredient_unit',
-            'ingredients.amount as ingredient_amount',
-            'ingredients.image as ingredient-image'
-            )
-                ->join('categories', 'categories.id', '=', 'cocktails.id')
-                ->join('ingredients', 'ingredients.cocktail_id', '=', 'cocktails.id')
-                ->where('cocktails.id', $id)
-                ->get();
-        return response::json($showCocktail);
+        $ingredientsByCocktail = Ingredient::select('products.name', 'products.image', 'ingredients.amount', 'ingredients.unit')->where('cocktail_id', $id)->join('products', 'products.id', '=', 'ingredients.product_id')->get();
+        $cocktailById = Cocktail::where('id', $id)->get()->first();
 
-        
+        if(count($cocktailById) == 0) {
+            return response::json(['data' => 'no cocktail']);
+        }
+
+        return response::json(
+            ['data' => [
+                'cocktail' => $cocktailById,
+                'ingredients' => $ingredientsByCocktail
+            ]]
+        );
     }
 }
