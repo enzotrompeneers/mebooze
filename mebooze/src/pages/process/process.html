@@ -32,6 +32,9 @@
 
     <ion-card-content>
       <pre>{{ scale | json }}</pre>
+      <div *ngIf="scale > 200">
+        <p>Hello!!!!</p>
+      </div>
     </ion-card-content>
     <p>{{ input }} en {{ totalLiquid }}</p>
 
