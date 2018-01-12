@@ -152,6 +152,12 @@ $blue: #4f6d7a;
     color: white;
     height: 50px;
     z-index: 9999;
+
+    .toolbar {
+        .toolbar-background {
+            border: none;
+        }
+    }
 }
 
 .header-md {
@@ -168,13 +174,13 @@ $blue: #4f6d7a;
     background: transparent;
 }
 
-.ion-md-menu {
+.ion-md-menu, .ion-ios-menu {
     &:before {
         content: "";
     }
 }
 
-.bar-button-menutoggle-md ion-icon {
+ion-icon {
     background-image: url('../assets/imgs/icons/hamburger_menu.svg');
     background-position-y: center;
     background-repeat: no-repeat;
@@ -190,6 +196,12 @@ ion-app.md {
 
 ion-title {
     text-align: center;
+}
+
+div {
+    .item-inner {
+        background: none !important;
+    }
 }
 
 .overlay {
