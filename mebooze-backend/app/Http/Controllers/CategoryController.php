@@ -12,7 +12,7 @@ class CategoryController extends Controller
     // show all categories
     public function index() {
         $allCategories = Category::all();
-        return response::json($allCategories);
+        return response::json(['data' => $allCategories]);
     }
     
     // show all cocktails by category id
@@ -20,6 +20,6 @@ class CategoryController extends Controller
         $allCocktails = Cocktail::select('id', 'name', 'image')
             ->where('categorie_id', $id)
             ->get();
-        return response::json($allCocktails);
+        return response::json(['data' => $allCocktails]);
     }
 }
