@@ -5,7 +5,9 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class CocktailService {
 
-    private url: string = 'http://18.221.149.211/api/';
+    // private url: string = 'http://18.221.149.211/api/';
+    private url: string = '/api/';
+    
 
     constructor(private http: Http) {
     }
