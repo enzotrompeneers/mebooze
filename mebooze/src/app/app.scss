@@ -150,10 +150,11 @@ $blue: #4f6d7a;
 
 .header {
     color: white;
-    height: 50px;
+    height: 75px;
     z-index: 9999;
 
     .toolbar {
+        height: 100%;
         .toolbar-background {
             border: none;
         }
@@ -215,4 +216,42 @@ div {
     background-image: url('../assets/imgs/gradient.png');
     background-repeat: repeat-y;
     background-size: contain;
+}
+
+ion-title, .title-ios {
+    position: absolute !important;
+    top: 0 !important;
+    left: 50% !important;
+    height: 75px !important;
+    width: 150px !important;
+    transform: translateX(-50%) !important;
+    border-bottom-left-radius: 100px !important;
+    border-bottom-right-radius: 100px !important;
+    padding: 0 !important;
+    background-image: url('../assets/imgs/gradient.png');
+    background-repeat: repeat-y;
+    background-size: contain;
+
+    .toolbar-title, .toolbar-title-ios {
+        color: white;
+        font-family: 'Source Sans Pro';
+        line-height: 75px;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+.bluetooth {
+    height: 20px;
+    width: 18px;
+    padding: 0;
+    span {
+        text-indent: -99999px;
+        background-image: url('../assets/imgs/icons/bluetooth-indicator.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 100%;
+        width: 100%;
+    }
 }
