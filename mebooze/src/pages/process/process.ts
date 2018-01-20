@@ -15,10 +15,14 @@ export class ProcessPage {
   id: number;
   step: number = 0;
   scale: number;
-  totalLiquid: number;
+  //totalLiquid: number;
   percent: number;
 
-  scaleAmount: number;
+  liquidAmount: number = 0;
+  totalItems: number = 0;
+
+
+  // scaleAmount: number;
 
   peripheral: any = {};
   statusMessage: string;
@@ -81,26 +85,31 @@ export class ProcessPage {
   //   waterEle[0].style.top = 250 - (this.scale / this.totalLiquid * 250)+ 'px';
   // }
 
+  resetTar() {
+    this.scale -= this.scale;
+  }
+
   process(step) {
+    // reset scale
+    this.resetTar();
 
     //  send message to flora to reset the value => tar
-    this.scale -= this.scale;
-    var data = new Uint8Array(1);
-    data[0] = 1;
-    this.ble.write(this.peripheral.id, '6e400001-b5a3-f393-e0a9-e50e24dcca9e', '6e400002-b5a3-f393-e0a9-e50e24dcca9e', data.buffer);
-
-    let totalIngredients = this.data && this.data.ingredients.length;
     let text = "";
+    let totalIngredients = this.data && this.data.ingredients.length;
     let ingredient_amount = this.data && this.data.ingredients[step].amount;
     let ingredient_unit = this.data && this.data.ingredients[step].unit;
     let ingredient_name = this.data && this.data.ingredients[step].name;
-    this.totalLiquid = ingredient_amount;
+
+    this.totalItems = totalIngredients;
+    this.liquidAmount = ingredient_amount;
+    
 
     if(step < totalIngredients) {
       this.step++;
+
       text = "<h2>Step " + step + "</h2><br>"
         + ingredient_amount + " " + ingredient_unit + " " + ingredient_name;
-        
+
     } else {
       text= "Add topping: " + ingredient_name + "<br><b>Cocktail voltooid</b>";
       document.getElementById('btnStep').style.visibility='hidden';
