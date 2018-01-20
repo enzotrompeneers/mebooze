@@ -70,7 +70,8 @@ export class ProcessPage {
   }
 
   animation() {
-    document.getElementsByClassName('water')[0].style.top = 250 - (this.scale / this.totalLiquid * 250)+ "px";
+    let waterEle = document.getElementsByClassName("water") as HTMLCollectionOf<HTMLElement>;
+    waterEle[0].style.top = 250 - (this.scale / this.totalLiquid * 250)+ "px";
   }
 
   process(steps) {
