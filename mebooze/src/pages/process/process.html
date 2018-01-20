@@ -15,47 +15,6 @@
     color: #ccc;
   }
 
-  input[type="text"] {
-    background-color: transparent;
-    margin-top: 30px;
-    border: 0;
-    border-bottom: solid 1px #8080ff;
-    text-align: center;
-    font-size: 20px;
-    color: #518bf0;
-    text-shadow: 0 0 3px #518bf0;
-    width: 45px;
-    display: inline-block;
-  }
-  input:focus {
-    outline: 0;
-    border-bottom: dashed 1px #ff8080;
-  }
-  input::-moz-selection {
-    color: #1a1a1a;
-    background-color: #c6e4ee;
-  }
-  input::selection {
-    color: #1a1a1a;
-    background-color: #c6e4ee;
-  }
-  ::-webkit-input-placeholder {
-    color: #7aa6f3;
-    text-shadow: 0 0 3px #7aa6f3;
-  }
-  :-moz-placeholder {
-    color: #7aa6f3;
-    text-shadow: 0 0 3px #7aa6f3;
-  }
-  ::-moz-placeholder {
-    color: #7aa6f3;
-    text-shadow: 0 0 3px #7aa6f3;
-  }
-  :-ms-input-placeholder {
-    color: #7aa6f3;
-    text-shadow: 0 0 3px #7aa6f3;
-  }
-
   .btn-step {
     margin: 0 auto;
     background: black;
@@ -347,50 +306,39 @@
 
 
 <ion-content padding>
-  <!--
-    <div ion-item *ngFor="let ingredients of data">
-      <p>{{ ingredients.ingredient_name }}</p>
-      <p>{{ ingredients.ingredient_unit }} {{ ingredients.ingredient_amount }}</p>
-    </div>
-  -->
-
-  <div>
+  <div *ngIf="step == 0">
+    <h1>Put glass on scale</h1>
+    <p>The glass is {{ weightGlass }} grams</p>
+  </div>
+  <!-- <div>
     <h1>{{ data && data.cocktail.name }}</h1>
-    <p id="steps"></p>
-
-    <div>
-      <div class="wrapper">
-          <div class="green">
-            <div class="progress">
-              <div class="inner">
-                <div class="percent"><span>67</span>%</div>
-                <div class="water"></div>
-                <div class="glare"></div>
+    <div *ngIf="step">
+      <div *ngIf="step <= totalIngredients"></div>
+        <p>This is step = {{ step }}</p>
+        <div *ngIf="scale < totalLiquid">
+          <div class="wrapper">
+            <div class="green">
+              <div class="progress">
+                <div class="inner">
+                  <div class="percent">
+                    <span>67</span>%</div>
+                  <div class="water" [style.top]="100 - ((100 / totalLiquid) * scale ) + '%'"></div>
+                  <div class="glare"></div>
+                </div>
               </div>
             </div>
           </div>
-          <!--<span>Enter Percentage: <input type="text" placeholder="67" id="percent-box">%</span>-->
         </div>
-    </div>
-
-    <button id="btnStep" class="btn-step" (click)="process(steps)" ion-button>Step {{steps}}</button>
-
-    
-    <ion-card-content>
-      <!--{{ totalLiquid }}
-      {{ scale | json }}-->
-      <!--<pre>{{ totalLiquid }}</pre>
-      <pre>{{ scale }}</pre>
-      <div *ngIf="scale > 100">
-        <p>kok!!!!</p>
-      </div> -->
-    </ion-card-content>
-
-  </div>
+        <div *ngIf="scale >= totalLiquid">
+          <h1>STOOOP</h1>
+        </div>
+      </div>
+      <button id="btnStep" class="btn-step" (click)="process(step)" ion-button>Step {{step}}</button>
+  </div> -->
 </ion-content>
 
 <script>
-  animation();
+  // animation();
 var colorInc = 100 / 3;
 
 $(function()
@@ -435,7 +383,7 @@ $(function()
     {
       $(".progress").parent().removeClass();
       $(".progress").parent().addClass("green");
-      $(".progress .water").css("top", 100 - 67 + "%");
+      $(".progress .water").css("top", 100 - 67 + "px");
       $(".progress .percent").text(67 + "%");
       $("#percent-box").val("");
     }

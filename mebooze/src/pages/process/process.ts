@@ -13,13 +13,17 @@ import { ScaleService } from '../../services/scale/scale';
 export class ProcessPage {
   data: any;
   id: number;
-  steps: number = 1;
+  step: number = 0;
   scale: number;
   totalLiquid: number;
   percent: number;
 
+  scaleAmount: number;
+
   peripheral: any = {};
   statusMessage: string;
+
+  weightGlass: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, private ble: BLE, private ngZone: NgZone, private cocktailService: CocktailService, private scaleService: ScaleService) {
     let device = this.scaleService.getData()
@@ -69,32 +73,34 @@ export class ProcessPage {
     alert.present();
   }
 
-  animation() {
-    let waterEle = document.getElementsByClassName("water") as HTMLCollectionOf<HTMLElement>;
-    waterEle[0].style.top = 250 - (this.scale / this.totalLiquid * 250)+ "px";
-  }
+  // animation() {
+  //   let waterEle = document.getElementsByClassName("water") as HTMLCollectionOf<HTMLElement>;
+  //   // waterEle[0].style.top = 250 - (this.scale / this.totalLiquid * 250)+ "px";
+  //   console.log(waterEle);
+  //   console.log(this.scale);
+  //   waterEle[0].style.top = 250 - (this.scale / this.totalLiquid * 250)+ 'px';
+  // }
 
-  process(steps) {
+  process(step) {
+
+    //  send message to flora to reset the value => tar
+
     let totalIngredients = this.data && this.data.ingredients.length;
     let text = "";
-    let ingredient_amount = this.data && this.data.ingredients[steps-1].amount;
-    let ingredient_unit = this.data && this.data.ingredients[steps-1].unit;
-    let ingredient_name = this.data && this.data.ingredients[steps-1].name;
+    let ingredient_amount = this.data && this.data.ingredients[step].amount;
+    let ingredient_unit = this.data && this.data.ingredients[step].unit;
+    let ingredient_name = this.data && this.data.ingredients[step].name;
     this.totalLiquid = ingredient_amount;
 
-    console.log(steps + " " + totalIngredients);
-
-    if(steps < totalIngredients) {
-      this.steps++;
-      text = "<h2>Step " + steps + "</h2><br>"
+    if(step < totalIngredients) {
+      this.step++;
+      text = "<h2>Step " + step + "</h2><br>"
         + ingredient_amount + " " + ingredient_unit + " " + ingredient_name;
         
     } else {
       text= "Add topping: " + ingredient_name + "<br><b>Cocktail voltooid</b>";
       document.getElementById('btnStep').style.visibility='hidden';
     }
-    document.getElementById("steps").innerHTML = text;
-    console.log(document.getElementsByClassName('water')[0]);
   }
 
   ionViewDidLoad() {
