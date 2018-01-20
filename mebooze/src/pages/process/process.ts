@@ -42,7 +42,7 @@ export class ProcessPage {
 
   onConnected(peripheral) {
     this.setStatus('Connected to ' + (peripheral.name || peripheral.id));
-
+    this.peripheral = peripheral;
     // check if HARDWARE is changing of value by enabling start notification
     this.ble.startNotification(peripheral.id, '6e400001-b5a3-f393-e0a9-e50e24dcca9e', '6e400003-b5a3-f393-e0a9-e50e24dcca9e').subscribe(
       data => this.onScaleChange(data),
@@ -84,6 +84,10 @@ export class ProcessPage {
   process(step) {
 
     //  send message to flora to reset the value => tar
+    this.scale -= this.scale;
+    var data = new Uint8Array(1);
+    data[0] = 1;
+    this.ble.write(this.peripheral.id, '6e400001-b5a3-f393-e0a9-e50e24dcca9e', '6e400002-b5a3-f393-e0a9-e50e24dcca9e', data.buffer);
 
     let totalIngredients = this.data && this.data.ingredients.length;
     let text = "";

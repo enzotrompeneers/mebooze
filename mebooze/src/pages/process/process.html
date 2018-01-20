@@ -308,9 +308,9 @@
 <ion-content padding>
   <div *ngIf="step == 0">
     <h1>Put glass on scale</h1>
-    <p>The glass is {{ weightGlass }} grams</p>
+    <p>The glass is {{ scale }} grams</p>
   </div>
-  <!-- <div>
+  <div>
     <h1>{{ data && data.cocktail.name }}</h1>
     <div *ngIf="step">
       <div *ngIf="step <= totalIngredients"></div>
@@ -334,7 +334,8 @@
         </div>
       </div>
       <button id="btnStep" class="btn-step" (click)="process(step)" ion-button>Step {{step}}</button>
-  </div> -->
+  </div>
+  <p>{{ peripheral | json }}</p>
 </ion-content>
 
 <script>
