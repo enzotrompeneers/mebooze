@@ -309,7 +309,40 @@
   <div *ngIf="step == 0">
     <h1>Put glass on scale</h1>
     <p>The glass is {{ weightGlass }} grams</p>
+
+    <div *ngIf="scale > 10">
+      <button class="btn-step" (click)="process(step)" ion-button>Start process</button>
+    </div>
   </div>
+
+  <div *ngIf="step > 0">
+      <div *ngIf="step == totalItems; else showStep">
+        <p>Process done</p>
+      </div>
+
+      <ng-template #showStep>
+          <p>process going</p>
+
+          <div class="wrapper">
+            <div class="green">
+              <div class="progress">
+                <div class="inner">
+                  <div class="percent">
+                    <!--<span>67</span>%</div>-->
+                  <div class="water" [style.top]="100 - ((100 / liquidAmount) * scale ) + '%'"></div>
+                  <div class="glare"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </ng-template>
+
+    <div *ngIf="scale >= liquidAmount">
+        <button id="btnStep" class="btn-step" (click)="process(step)" ion-button>Step {{step}}</button>
+    </div>
+    </div>
+
+
   <!-- <div>
     <h1>{{ data && data.cocktail.name }}</h1>
     <div *ngIf="step">
