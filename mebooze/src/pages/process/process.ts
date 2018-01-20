@@ -69,6 +69,11 @@ export class ProcessPage {
     alert.present();
   }
 
+  animation() {
+    let waterEle = document.getElementsByClassName("water") as HTMLCollectionOf<HTMLElement>;
+    waterEle[0].style.top = 250 - (this.scale / this.totalLiquid * 250)+ "px";
+  }
+
   process(steps) {
     let totalIngredients = this.data && this.data.ingredients.length;
     let text = "";
@@ -89,7 +94,7 @@ export class ProcessPage {
       document.getElementById('btnStep').style.visibility='hidden';
     }
     document.getElementById("steps").innerHTML = text;
-    document.getElementsByClassName('water')[0].style.top = 250 / this.totalLiquid * this.scale;
+    console.log(document.getElementsByClassName('water')[0]);
   }
 
   ionViewDidLoad() {
