@@ -14,6 +14,7 @@
     font-size: 15px;
     color: #ccc;
   }
+
   input[type="text"] {
     background-color: transparent;
     margin-top: 30px;
@@ -54,6 +55,13 @@
     color: #7aa6f3;
     text-shadow: 0 0 3px #7aa6f3;
   }
+
+  .btn-step {
+    margin: 0 auto;
+    background: black;
+    width: 100%;
+  }
+
   .wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -349,27 +357,28 @@
   <div>
     <h1>{{ data && data.cocktail.name }}</h1>
     <p id="steps"></p>
-    <button id="btnStep" (click)="process(steps)">
-      Step {{steps}}
-    </button>
 
-    <div class="wrapper">
-      <div class="green">
-        <div class="progress">
-          <div class="inner">
-            <div class="percent"><span>67</span>%</div>
-            <div class="water"></div>
-            <div class="glare"></div>
+    <div>
+      <div class="wrapper">
+          <div class="green">
+            <div class="progress">
+              <div class="inner">
+                <div class="percent"><span>67</span>%</div>
+                <div class="water"></div>
+                <div class="glare"></div>
+              </div>
+            </div>
           </div>
+          <!--<span>Enter Percentage: <input type="text" placeholder="67" id="percent-box">%</span>-->
         </div>
-      </div>
-      
-      <span>Enter Percentage: <input type="text" placeholder="67" id="percent-box">%</span>
     </div>
 
+    <button id="btnStep" class="btn-step" (click)="process(steps)" ion-button>Step {{steps}}</button>
+
+    
     <ion-card-content>
-      {{ totalLiquid }}
-      {{ scale | json }}
+      <!--{{ totalLiquid }}
+      {{ scale | json }}-->
       <!--<pre>{{ totalLiquid }}</pre>
       <pre>{{ scale }}</pre>
       <div *ngIf="scale > 100">
@@ -377,27 +386,11 @@
       </div> -->
     </ion-card-content>
 
-
   </div>
 </ion-content>
 
-
-
-
-
-
-
-
 <script>
   animation();
-</script>
-
-
-
-
-
-
-<script>
 var colorInc = 100 / 3;
 
 $(function()
