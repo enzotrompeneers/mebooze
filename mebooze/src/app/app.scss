@@ -181,20 +181,6 @@ $blue: #4f6d7a;
     }
 }
 
-ion-icon {
-    &.hamburger-menu {
-        background-image: url('../assets/imgs/icons/hamburger_menu.svg');
-        background-position-y: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 50%;
-
-        &.white {
-            background-image: url('../assets/imgs/icons/hamburger_menu_white.svg');
-        }
-    }
-}
-
 .scroll-content, .fixed-content {
     padding-top: 25px !important;
     margin-top: 75px !important;
@@ -244,25 +230,5 @@ ion-title, .title-ios {
         font-size: 14px;
         font-weight: bold;
         text-transform: uppercase;
-    }
-}
-
-.bluetooth {
-    height: 19px;
-    width: 29px;
-    padding: 0 11px 0 0;
-    span {
-        text-indent: -99999px;
-        background-image: url('../assets/imgs/icons/bluetooth.svg');
-        background-repeat: no-repeat;
-        background-size: contain;
-        height: 100%;
-        width: 100%;
-    }
-
-    &.white {
-        span {
-            background-image: url('../assets/imgs/icons/bluetooth-white.svg');
-        }
     }
 }

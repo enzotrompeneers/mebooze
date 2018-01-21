@@ -1,17 +1,7 @@
 <ion-header>
-
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon class="hamburger-menu" name="menu"></ion-icon>
-    </button>
-    <ion-title>Mebooze</ion-title>
-    <ion-buttons end>
-      <button ion-button class="bluetooth">
-        Scan
-      </button>
-    </ion-buttons>
+    <header></header>
   </ion-navbar>
-
 </ion-header>
 
 
@@ -31,5 +21,7 @@
       </div>
   </div>
 
-  <button id="btnStep" (click)="showProcessByIngredient(id)" ion-button>Shake to start</button>
+  <button id="btnStep" (click)="showProcessByIngredient(id)" ion-button>
+    <span>START</span>
+  </button>
 </ion-content>

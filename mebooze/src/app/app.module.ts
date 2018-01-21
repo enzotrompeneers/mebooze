@@ -12,6 +12,9 @@ import { DrinksPage } from '../pages/drinks/drinks';
 import { IngredientsPage } from '../pages/ingredients/ingredients';
 import { ProcessPage } from '../pages/process/process';
 
+// custom header component
+import { HeaderComponent } from '../components/header/header';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -26,7 +29,8 @@ import { CocktailService } from '../services/cocktail/cocktail';
     CategoriesPage,
     DrinksPage,
     IngredientsPage,
-    ProcessPage
+    ProcessPage,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

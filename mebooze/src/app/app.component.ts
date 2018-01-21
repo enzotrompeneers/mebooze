@@ -17,6 +17,8 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
+  id: string;
+
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
@@ -26,7 +28,6 @@ export class MyApp {
       { title: 'Bluetooth', component: BleConnectPage },
       { title: 'Categories', component: CategoriesPage }
     ];
-
   }
 
   initializeApp() {

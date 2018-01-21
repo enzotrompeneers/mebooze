@@ -1,6 +1,9 @@
 page-ingredients {
     ion-content {
+        position: relative !important;
+        padding-bottom: 0 !important;
         .scroll-content {
+            padding-bottom: 0 !important;
             .heading {
                 padding-left: 0;
                 height: 180px;
@@ -92,6 +95,37 @@ page-ingredients {
                             }
                         }
                     }
+                }
+            }
+
+            #btnStep {
+                bottom: 0;
+                left: 50%;
+                -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+
+                height: 50px !important;
+                width: 100px !important;
+
+                border-top-left-radius: 100px !important;
+                border-top-right-radius: 100px !important;
+
+                padding: 0 !important;
+                margin: 0;
+
+                background-image: url(../assets/imgs/gradient.png);
+                background-repeat: repeat-y;
+                background-size: contain;
+
+                span {
+                    display: block;
+                    line-height: 50px;
+                    text-align: center;
+
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: white;
+                    text-transform: uppercase;
                 }
             }
         }
