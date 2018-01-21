@@ -8,12 +8,7 @@
   
   
   <ion-content padding>
-    <div *ngIf="step == totalItems">
-      <p>The last step <br>
-      Add a slice/piece of {{ name }} <br>
-      Your cocktail is finished, enjoy!
-      </p>
-    </div>
+    
 
     <div *ngIf="scale > -10">
       <div *ngIf="step == 0">
@@ -27,6 +22,13 @@
   
       <div *ngIf="step > 0">
         <p>The glass is {{ scale }} grams</p>
+
+        <div *ngIf="step == totalItems">
+            <p>Step {{ step }} / {{ totalItems }} <br>
+            Add a slice/piece of {{ name }} <br>
+            Your cocktail is finished, enjoy!
+            </p>
+          </div>
     
         <div *ngIf="step < totalItems">
           <div class="wrapper">
