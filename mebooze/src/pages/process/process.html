@@ -9,8 +9,9 @@
   
   <ion-content padding>
     <div *ngIf="step == totalItems">
-      <p>Process done
-      {{ name }}
+      <p>The last step <br>
+      Add a slice/piece of {{ name }} <br>
+      Your cocktail is finished, enjoy!
       </p>
     </div>
 
@@ -46,11 +47,12 @@
               </div>
             </div>
           </div>
+          <div *ngIf="scale >= amount">
+            <button id="btnStep" class="btn-step" (click)="process(step)" ion-button>Step {{step}}</button>
+          </div>
         </div>
     
-        <div *ngIf="scale >= amount">
-          <button id="btnStep" class="btn-step" (click)="process(step)" ion-button>Step {{step}}</button>
-        </div>
+        
       </div>
     </div>
   </ion-content>
