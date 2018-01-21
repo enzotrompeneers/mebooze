@@ -29,6 +29,8 @@ export class ProcessPage {
 
   weightGlass: number;
 
+  tarValue: number = 0;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, private ble: BLE, private ngZone: NgZone, private cocktailService: CocktailService, private scaleService: ScaleService) {
     let device = this.scaleService.getData()
     this.ble.connect(device.id).subscribe(
@@ -57,12 +59,12 @@ export class ProcessPage {
   onScaleChange(buffer) {
     var data = new Uint8Array(buffer);
     this.ngZone.run(() => {
-      this.scale = String.fromCharCode.apply(null, data);
+      // return value minus the last scale value
+      this.scale = String.fromCharCode.apply(null, data) - this.tarValue;
     });
   }
 
   setStatus(message) {
-    console.log(message);
     this.ngZone.run(() => {
       this.statusMessage = message;
     });
@@ -86,14 +88,14 @@ export class ProcessPage {
   // }
 
   resetTar() {
-    this.scale -= this.scale;
+    // add current scale value to tarValue
+    this.tarValue += this.scale;
   }
 
   process(step) {
     // reset scale
     this.resetTar();
 
-    //  send message to flora to reset the value => tar
     let text = "";
     let totalIngredients = this.data && this.data.ingredients.length;
     let ingredient_amount = this.data && this.data.ingredients[step].amount;
