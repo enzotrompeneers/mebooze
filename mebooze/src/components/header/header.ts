@@ -50,7 +50,7 @@ export class HeaderComponent {
       () => this.showAlert('ERROR', 'disconnected'),
       () => this.showAlert('ERROR', 'not disconnected')
     );
-
+    this.connected = false;
     // It doens't work. FUCKING DON
     // this.ble.stopNotification(this.peripheral.id, '6e400001-b5a3-f393-e0a9-e50e24dcca9e', '6e400003-b5a3-f393-e0a9-e50e24dcca9e').then(
     //   () => this.showAlert('ERROR', 'stopped notification'),

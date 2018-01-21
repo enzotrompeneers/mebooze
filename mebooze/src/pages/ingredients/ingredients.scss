@@ -96,6 +96,12 @@ page-ingredients {
                         }
                     }
                 }
+
+                &::after {
+                    clear: both;
+                    display: block;
+                    content: "";
+                }
             }
 
             #btnStep {
