@@ -15,14 +15,13 @@ export class ProcessPage {
   id: number;
   step: number = 0;
   scale: number;
-  //totalLiquid: number;
   percent: number;
 
-  liquidAmount: number = 0;
+
   totalItems: number = 0;
-
-
-  // scaleAmount: number;
+  amount: number = 0;
+  unit: string;
+  name: string;
 
   peripheral: any = {};
   statusMessage: string;
@@ -79,43 +78,30 @@ export class ProcessPage {
     alert.present();
   }
 
-  // animation() {
-  //   let waterEle = document.getElementsByClassName("water") as HTMLCollectionOf<HTMLElement>;
-  //   // waterEle[0].style.top = 250 - (this.scale / this.totalLiquid * 250)+ "px";
-  //   console.log(waterEle);
-  //   console.log(this.scale);
-  //   waterEle[0].style.top = 250 - (this.scale / this.totalLiquid * 250)+ 'px';
-  // }
-
   resetTar() {
     // add current scale value to tarValue
     this.tarValue += this.scale;
   }
 
   process(step) {
-    // reset scale
+    // reset the tar
     this.resetTar();
 
-    let text = "";
-    let totalIngredients = this.data && this.data.ingredients.length;
-    let ingredient_amount = this.data && this.data.ingredients[step].amount;
-    let ingredient_unit = this.data && this.data.ingredients[step].unit;
-    let ingredient_name = this.data && this.data.ingredients[step].name;
+    // next step
+    this.step++;
 
-    this.totalItems = totalIngredients;
-    this.liquidAmount = ingredient_amount;
+    // set all ingredients of specific step
+    this.totalItems = this.data && this.data.ingredients.length;
+    this.amount = this.data && this.data.ingredients[step].amount;
+    this.unit = this.data && this.data.ingredients[step].unit;
+    this.name = this.data && this.data.ingredients[step].name;
+    
     
 
-    if(step < totalIngredients) {
-      this.step++;
-
-      text = "<h2>Step " + step + "</h2><br>"
-        + ingredient_amount + " " + ingredient_unit + " " + ingredient_name;
-
-    } else {
-      text= "Add topping: " + ingredient_name + "<br><b>Cocktail voltooid</b>";
-      document.getElementById('btnStep').style.visibility='hidden';
-    }
+    //if(step > this.totalItems) {
+      // hide button if there are no more steps
+      //document.getElementById('btnStep').style.visibility='hidden';
+    //}
   }
 
   ionViewDidLoad() {
