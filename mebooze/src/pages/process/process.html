@@ -1,18 +1,34 @@
   <ion-header>
-  
     <ion-navbar>
       <header></header>
     </ion-navbar>
-  
   </ion-header>
   
-  
   <ion-content padding>
-    <div *ngIf="step == totalItems">
+    <!-- <div *ngIf="step == totalItems">
       <p>The last step <br>
       Add a slice/piece of {{ name }} <br>
       Your cocktail is finished, enjoy!
       </p>
+    </div> -->
+    <div class="wrapper">
+      <div class="green">
+        <div class="progress">
+          <div class="inner">
+            <div class="process-details">
+              <p>
+                Step 0 / 0
+                <!-- Step {{ step }} / {{ totalItems }}
+                <br> {{ amount }} {{ unit }}
+                <br> {{ name }} -->
+              </p>
+            </div>
+            <div class="percent"></div>
+            <div class="water" [style.top]="100 - ((100 / amount) * scale ) + '%'"></div>
+            <div class="glare"></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div *ngIf="scale > -10">

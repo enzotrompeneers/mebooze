@@ -1,4 +1,60 @@
 header {
+    //position: relative;
+    &::after {
+        clear: both;
+        display: block;
+        content: "";
+    }
+
+    ion-buttons {
+        height: 32px;
+    }
+
+    ion-title, .title-ios {
+        position: absolute !important;
+        top: 0 !important;
+        left: 50% !important;
+        height: 75px !important;
+        width: 150px !important;
+        transform: translateX(-50%) !important;
+        border-bottom-left-radius: 100px !important;
+        border-bottom-right-radius: 100px !important;
+        padding: 0 !important;
+        background-image: url('../assets/imgs/gradient.png');
+        background-repeat: repeat-y;
+        background-size: contain;
+
+        .toolbar-title {
+            width: 100px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-60%);
+            line-height: 30px;
+
+            &::before {
+                width: 20px;
+                height: 30px;
+                display: block;
+                float: left;
+                content: "";
+
+                background-image: url('../assets/imgs/logo/glass.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+
+        .toolbar-title, .toolbar-title-ios {
+            color: white;
+            font-family: 'Source Sans Pro';
+            // line-height: 75px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+
     &.white-menu {
         .menu {
             ion-icon {
@@ -9,6 +65,7 @@ header {
         }
 
         .bluetooth {
+            margin: 6.5px 0;
             span {
                 background-image: url('../assets/imgs/icons/bluetooth-white.svg');
             }
@@ -26,6 +83,7 @@ header {
     }
     .menu {
         float: left;
+        position: relative;
         ion-icon {
             &.hamburger-menu {
                 background-image: url('../assets/imgs/icons/hamburger_menu.svg');
@@ -33,6 +91,10 @@ header {
                 background-repeat: no-repeat;
                 background-size: contain;
                 width: 50%;
+
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
 
                 &.white {
                     background-image: url('../assets/imgs/icons/hamburger_menu_white.svg');
@@ -44,6 +106,7 @@ header {
         height: 19px;
         width: 29px;
         padding: 0 11px 0 0;
+        margin: 6.5px 0.2rem;
         span {
             text-indent: -99999px;
             background-image: url('../assets/imgs/icons/bluetooth.svg');

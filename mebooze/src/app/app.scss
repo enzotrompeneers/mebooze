@@ -150,8 +150,13 @@ $blue: #4f6d7a;
 
 .header {
     color: white;
-    height: 75px;
+    height: 100px;
     z-index: 9999;
+    background-color: white;
+
+    &.home-menu {
+        background-color: transparent;
+    } 
 
     .toolbar {
         height: 100%;
@@ -209,26 +214,91 @@ div {
     background-size: contain;
 }
 
-ion-title, .title-ios {
-    position: absolute !important;
-    top: 0 !important;
-    left: 50% !important;
-    height: 75px !important;
-    width: 150px !important;
-    transform: translateX(-50%) !important;
-    border-bottom-left-radius: 100px !important;
-    border-bottom-right-radius: 100px !important;
-    padding: 0 !important;
-    background-image: url('../assets/imgs/gradient.png');
-    background-repeat: repeat-y;
-    background-size: contain;
+ion-content {
+    &.slide-menu {
+        ion-list {
+            button {
+                font-family: 'Source Sans Pro';
+                font-weight: bold;
+                text-transform: uppercase;
+                color: $blue;
 
-    .toolbar-title, .toolbar-title-ios {
-        color: white;
-        font-family: 'Source Sans Pro';
-        line-height: 75px;
-        font-size: 14px;
-        font-weight: bold;
-        text-transform: uppercase;
+                border: none !important;
+                border-top: none;
+
+                .item-inner {
+                    border: none !important;
+                    box-shadow: none;
+
+                    .input-wrapper {
+                        ion-label {
+                            font-size: 20px;
+                            &::before {
+                                width: 25px;
+                                height: 18px;
+                                margin: 3.5px 0;
+                                display: block;
+                                content: "";
+                                float: left;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+
+                &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+                    .item-inner {
+                        border: none !important;
+                        box-shadow: none;
+
+                        .input-wrapper {
+                            ion-label {
+                                &::before {
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    background-position-x: center;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:nth-child(1) {
+                    .item-inner {
+                        .input-wrapper {
+                            ion-label {
+                                &::before {
+                                    background-image: url('/assets/imgs/icons/house.svg');
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:nth-child(2) {
+                    .item-inner {
+                        .input-wrapper {
+                            ion-label {
+                                &::before {
+                                    background-image: url('/assets/imgs/icons/bluetooth.svg');
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:nth-child(3) {
+                    .item-inner {
+                        .input-wrapper {
+                            ion-label {
+                                &::before {
+                                    background-image: url('/assets/imgs/icons/category.svg');
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

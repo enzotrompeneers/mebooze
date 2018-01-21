@@ -1,30 +1,3 @@
-  * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  html,
-  body {
-    height: 100%;
-  }
-
-  body {
-    background-color: #1a1a1a;
-    font-family: sans-serif;
-    font-size: 15px;
-    color: #ccc;
-  }
-
-  .process-details {
-    text-align: center;
-    margin: 0 auto;
-    position: relative;
-    top: 30%;
-    transform: translateY(-50%);
-    font-size: 1.8rem;
-    font-style: bold;
-  }
-
   .btn-step {
     margin: 10px auto;
     background: black;
@@ -32,292 +5,157 @@
   }
 
   .wrapper {
-    display: flex;
-    -webkit-box-align: center;
-    -o-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -o-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-orient: vertical;
-    -o-box-orient: vertical;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .green {
-    margin-top: 15px;
-  }
-
-  .green .progress,
-  .red .progress,
-  .orange .progress {
-    position: relative;
-    border-radius: 50%;
-  }
-
-  .green .progress,
-  .red .progress,
-  .orange .progress {
-    width: 250px;
-    height: 250px;
-  }
-
-  .green .progress {
-    border: 5px solid #53fc53;
-  }
-
-  .green .progress {
-    -webkit-box-shadow: 0 0 20px #029502;
-    box-shadow: 0 0 20px #029502;
-  }
-
-  .green .progress,
-  .red .progress,
-  .orange .progress {
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
-  }
-
-  .green .progress .inner,
-  .red .progress .inner,
-  .orange .progress .inner {
-    position: absolute;
-    overflow: hidden;
-    z-index: 2;
-    border-radius: 50%;
-  }
-
-  .green .progress .inner,
-  .red .progress .inner,
-  .orange .progress .inner {
-    width: 240px;
-    height: 240px;
-  }
-
-  .green .progress .inner,
-  .red .progress .inner,
-  .orange .progress .inner {
-    border: 5px solid #1a1a1a;
-  }
-
-  .green .progress .inner,
-  .red .progress .inner,
-  .orange .progress .inner {
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
-  }
-
-  .green .progress .inner .water,
-  .red .progress .inner .water,
-  .orange .progress .inner .water {
-    position: absolute;
-    z-index: 1;
-    width: 200%;
-    height: 200%;
-    left: -50%;
-    border-radius: 40%;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    animation-timing-function: linear;
-    -webkit-animation-name: spin;
-    animation-name: spin;
-  }
-
-  .green .progress .inner .water {
-    top: 25%;
-  }
-
-  .green .progress .inner .water {
-    background: rgba(83, 252, 83, 0.5);
-  }
-
-  .green .progress .inner .water,
-  .red .progress .inner .water,
-  .orange .progress .inner .water {
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
-  }
-
-  .green .progress .inner .water,
-  .red .progress .inner .water,
-  .orange .progress .inner .water {
-    -webkit-animation-duration: 10s;
-    animation-duration: 10s;
-  }
-
-  .green .progress .inner .water {
-    -webkit-box-shadow: 0 0 20px #03bc03;
-    box-shadow: 0 0 20px #03bc03;
-  }
-
-  .green .progress .inner .glare,
-  .red .progress .inner .glare,
-  .orange .progress .inner .glare {
-    position: absolute;
-    top: -120%;
-    left: -120%;
-    z-index: 5;
-    width: 200%;
-    height: 200%;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    border-radius: 50%;
-  }
-
-  .green .progress .inner .glare,
-  .red .progress .inner .glare,
-  .orange .progress .inner .glare {
-    background-color: rgba(255, 255, 255, 0.15);
-  }
-
-  .green .progress .inner .glare,
-  .red .progress .inner .glare,
-  .orange .progress .inner .glare {
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
-  }
-
-  .green .progress .inner .percent,
-  .red .progress .inner .percent,
-  .orange .progress .inner .percent {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    font-weight: bold;
-    text-align: center;
-  }
 
-  .green .progress .inner .percent,
-  .red .progress .inner .percent,
-  .orange .progress .inner .percent {
-    line-height: 240px;
-    font-size: 92.3076923076923px;
-  }
+    .green, .red, .orange {
+      width: 100%;
+      height: 100%;
+      .progress {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: all 1s ease;
 
-  .green .progress .inner .percent {
-    color: #03c603;
-  }
+        .inner {
+          position: absolute;
+          overflow: hidden;
+          z-index: 2;
+          width: 100%;
+          height: 100%;
+          transition: all 1s ease;
 
-  .green .progress .inner .percent {
-    text-shadow: 0 0 10px #029502;
-  }
+          .glare {
+            position: absolute;
+            top: -120%;
+            left: -120%;
+            z-index: 5;
+            width: 200%;
+            height: 200%;
+            transform: rotate(45deg);
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.15);
+            transition: all 1s ease;
+          }
 
-  .green .progress .inner .percent,
-  .red .progress .inner .percent,
-  .orange .progress .inner .percent {
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
-  }
+          .percent {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-weight: bold;
+            text-align: center;
+            line-height: 240px;
+            font-size: 92.3076923076923px;
+            transition: all 1s ease;
+          }
 
-  .red {
-    margin-top: 15px;
-  }
+          .water {
+            // position: absolute;
+            // z-index: 1;
+            // width: 200%;
+            // height: 200%;
+            // left: -50%;
+            // border-radius: 100%;
+            // animation-iteration-count: infinite;
+            // animation-timing-function: linear;
+            // animation-name: spin;
 
-  .red .progress {
-    border: 5px solid #ed3b3b;
-  }
+            // transition: all 1s ease;
+            // animation-duration: 10s;
+            opacity: .4;
+            position: absolute;
+            top: 3%;
+            left: 50%;
+            background: #0af;
+            width: 1000px;
+            height: 1000px;
+            margin-left: -500px;
+            margin-top: -500px;
+            transform-origin: 50% 50%;
+            border-radius: 43%;
+            animation: drift 3000ms infinite linear;
+          }
+        }
+      }
+    }
 
-  .red .progress {
-    -webkit-box-shadow: 0 0 20px #7a0b0b;
-    box-shadow: 0 0 20px #7a0b0b;
-  }
+    .green {
+      margin-top: 2px;
+      .progress {
+        box-shadow: 0px 1px 3.75px 1.25px rgba(57, 62, 65, 0.25);
+        border-radius: 5px;
 
-  .red .progress .inner .water {
-    top: 75%;
-  }
+        .inner {
+          .process-details {
+            text-align: center;
+            margin: 0 auto;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.8rem;
+            font-style: bold;
 
-  .red .progress .inner .water {
-    background: rgba(237, 59, 59, 0.5);
-  }
+            p {
+              margin: 0;
+            }
+          }
 
-  .red .progress .inner .water {
-    -webkit-box-shadow: 0 0 20px #9b0e0e;
-    box-shadow: 0 0 20px #9b0e0e;
-  }
+          .percent {
+          }
 
-  .red .progress .inner .percent {
-    color: #a30f0f;
-  }
+          .water {
+            top: 190%;
+            background-image: url('/assets/imgs/gradient.png');
+            background-repeat: repeat;
+            background-size: contain;
+          }
+        }
+      }
+    }
 
-  .red .progress .inner .percent {
-    text-shadow: 0 0 10px #7a0b0b;
-  }
+    .red {
+      margin-top: 15px;
 
-  .orange {
-    margin-top: 15px;
-  }
+      .progress {
+        border: 5px solid #ed3b3b;
+        box-shadow: 0 0 20px #7a0b0b;
 
-  .orange .progress {
-    border: 5px solid #f07c3e;
-  }
+        .inner {
+          .water {
+            top: 75%;
+            background: rgba(237, 59, 59, 0.5);
+            box-shadow: 0 0 20px #9b0e0e;
+          }
 
-  .orange .progress {
-    -webkit-box-shadow: 0 0 20px #7e320a;
-    box-shadow: 0 0 20px #7e320a;
-  }
+          .percent {
+            color: #a30f0f;
+            text-shadow: 0 0 10px #7a0b0b;
+          }
+        }
+      }
+    }
 
-  .orange .progress .inner .water {
-    top: 50%;
-  }
+    .orange {
+      margin-top: 15px;
+      .progress {
+        border: 5px solid #f07c3e;
+        box-shadow: 0 0 20px #7e320a;
+        .inner {
+          .water {
+            top: 50%;
+            background: rgba(240, 124, 62, 0.5);
+            box-shadow: 0 0 20px #a0400c;
+          }
 
-  .orange .progress .inner .water {
-    background: rgba(240, 124, 62, 0.5);
-  }
-
-  .orange .progress .inner .water {
-    -webkit-box-shadow: 0 0 20px #a0400c;
-    box-shadow: 0 0 20px #a0400c;
-  }
-
-  .orange .progress .inner .percent {
-    color: #a8430d;
-  }
-
-  .orange .progress .inner .percent {
-    text-shadow: 0 0 10px #7e320a;
-  }
-
-  #copyright {
-    margin-top: 25px;
-    background-color: transparent;
-    font-size: 14px;
-    color: #b3b3b3;
-    text-align: center;
-  }
-
-  #copyright div {
-    margin-bottom: 10px;
-  }
-
-  #copyright a,
-  #copyright a:link {
-    color: #808080;
-    text-decoration: none;
-    border-bottom: 1px solid #808080;
-    padding-bottom: 2px;
-  }
-
-  #copyright a:active {
-    color: #b3b3b3;
-  }
-
-  #copyright a:hover {
-    color: #b3b3b3;
-    border-bottom: 1px solid #b3b3b3;
-    padding-bottom: 4px;
-  }
-
-  .instructions {
-    display: inline-block;
-    margin: 5px 0;
-    font-size: 16px;
+          .percent {
+            color: #a8430d;
+            text-shadow: 0 0 10px #7e320a;
+          }
+        }
+      }
+    }
   }
 
   @-webkit-keyframes spin {
@@ -341,3 +179,8 @@
       transform: rotate(360deg);
     }
   }
+
+  @keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
