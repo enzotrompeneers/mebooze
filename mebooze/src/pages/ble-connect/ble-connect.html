@@ -8,8 +8,10 @@
   <div>
     <h2>Available devices</h2>
     <ion-list>
-      <button ion-item *ngFor="let device of devices" (click)="deviceSelected(device)">
-        <h2>{{ device.name || 'Unnamed' }}</h2>
+      <button ion-item *ngFor="let device of devices" (click)="deviceSelected(device)" [class.no-data]="!device.name">
+        <div *ngIf="device.name">
+          <h2>{{ device.name }}</h2>
+        </div>
       </button>
     </ion-list>
   </div>
