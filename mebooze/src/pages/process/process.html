@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div *ngIf="scale > -10">
+    <div *ngIf="scale > -10;">
       <div *ngIf="step == 0">
         <h1>Put glass on scale</h1>
         <p>The glass is {{ scale }} grams</p>
@@ -43,6 +43,13 @@
   
       <div *ngIf="step > 0">
         <p>The glass is {{ scale }} grams</p>
+
+        <div *ngIf="step == totalItems">
+          <p>Step {{ step }} / {{ totalItems }} <br>
+          Add a slice/piece of {{ name }} <br>
+          Your cocktail is finished, enjoy!
+          </p>
+        </div>
     
         <div *ngIf="step < totalItems">
           <div class="wrapper">
@@ -57,7 +64,12 @@
                       </p>
                     </div>
                   <div class="percent"></div>
-                  <div class="water" [style.top]="100 - ((100 / amount) * scale ) + '%'"></div>
+                  <div *ngIf="scale <= amount">
+                    <div class="water" [style.top]="100 - ((100 / amount) * scale ) + '%'"></div>
+                  </div>
+                  <div *ngIf="scale > amount">
+                    <div class="water" [style.top]="0"></div>
+                  </div>
                   <div class="glare"></div>
                 </div>
               </div>
@@ -70,6 +82,10 @@
     
         
       </div>
+    </div>
+
+    <div *ngIf="scale < -10;">
+      <p>Please put your glass back on the scale.</p>
     </div>
   </ion-content>
   
