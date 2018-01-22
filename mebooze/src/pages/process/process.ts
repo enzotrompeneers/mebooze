@@ -36,7 +36,7 @@ export class ProcessPage {
     let device = this.scaleService.getData();
     this.ble.startNotification(device.id, '6e400001-b5a3-f393-e0a9-e50e24dcca9e', '6e400003-b5a3-f393-e0a9-e50e24dcca9e').subscribe(
       data => this.onScaleChange(data),
-      (error) => this.showAlert('Unexpected error', error)
+      (error) => this.showAlert('No Bluetooth Connection', 'You need to connect with the scale.')
     );
     this.id = this.navParams.get('id');
     this.cocktailService.getIngredientsByDrink(this.id).map(res => res.json()).subscribe(
