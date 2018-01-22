@@ -5,16 +5,9 @@
   </ion-header>
   
   <ion-content padding>
-
-    <div *ngIf="!scale || peripheral == null" class="error">
-      <p>The scale is not connected with the application.</p>
-    </div>
-
-    <div *ngIf="scale">
       <div style="height: 100%;" *ngIf="scale > -10;">
         <div *ngIf="step == 0">
           <div class="glass-instructions">
-            <p>{{ scale }}</p>
             <h1>Put your glass or cocktail shaker on the scale.</h1>
           </div>
           <div *ngIf="scale > 10">
@@ -62,16 +55,15 @@
         </div>
       </div>
 
-      <!-- <div *ngIf="scale < -25 && step != totalItems" class="offglass-instructions">
+      <div *ngIf="scale < -25 && step != totalItems" class="offglass-instructions">
         <h1>Please put your glass back on the scale.</h1>
-      </div> -->
+      </div>
 
       <div *ngIf="scale < -25 && step == totalItems" class="offglass-instructions">
           <button class="home_btn" (click)="toHomePage()" ion-button>
             <span>home</span>
           </button>
       </div>
-    </div>
   </ion-content>
   
   <script>
