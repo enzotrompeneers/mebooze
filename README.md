@@ -2,7 +2,7 @@
 Smart cocktail shaker
 
 ## Ionic Application
-[MeBooze App (coming)](https://github.com/enzotrompeneers/mebooze/tree/master/mebooze)  
+[MeBooze App](https://github.com/enzotrompeneers/mebooze/tree/master/mebooze)  
 
 ## Kickstarter Video
 [MeBooze Video](https://youtu.be/D3IL05QWqJg)  
@@ -22,7 +22,7 @@ Smart cocktail shaker
 [Backend ERD](http://www.laravelsd.com/share/p5EqMj)  
 
 ## Arduino 
-[Arduino (coming)](https://github.com/enzotrompeneers/mebooze/tree/master/arduino)  
+[Arduino](https://github.com/enzotrompeneers/mebooze/tree/master/arduino)  
 
 ### Moodboard
 [Moodboard](https://github.com/enzotrompeneers/mebooze/tree/master/moodboard)  
