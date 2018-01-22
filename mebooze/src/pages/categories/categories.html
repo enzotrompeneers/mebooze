@@ -11,6 +11,6 @@
   <button ion-item *ngFor="let category of data" (click)="showDrinksByCategory(category.id)">
     <h1>{{ category.name }}</h1>
     <div class="overlay"></div>
-    <img src="../assets/imgs/categories/{{ category.image }}" alt="{{ category.name }}">
+    <img src="assets/imgs/categories/{{ category.image }}" alt="{{ category.name }}">
   </button>
 </ion-content>
