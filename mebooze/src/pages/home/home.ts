@@ -4,6 +4,8 @@ import { BLE } from '@ionic-native/ble';
 
 import { ScaleService } from '../../services/scale/scale';
 
+import { CategoriesPage } from '../categories/categories';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -55,6 +57,10 @@ export class HomePage {
       buttons: ['OK']
     });
     alert.present();
+  }
+
+  toCategories() {
+    this.navCtrl.setRoot(CategoriesPage);
   }
 
 }

@@ -32,15 +32,14 @@ page-home {
                 }
 
                 .btn {
-                    bottom: 0;
+                    bottom: 25px;
                     left: 50%;
                     -webkit-transform: translateX(-50%);
                     transform: translateX(-50%);
 
-                    height: 50px !important;
+                    height: 100px !important;
                     width: 100px !important;
-                    border-top-left-radius: 100px !important;
-                    border-top-right-radius: 100px !important;
+                    border-radius: 100px;
                     padding: 0 !important;
                     background-image: url(../assets/imgs/gradient.png);
                     background-repeat: repeat-y;
@@ -48,13 +47,17 @@ page-home {
 
                     span {
                         display: block;
-                        line-height: 55px;
+                        // line-height: 100px;
                         text-align: center;
 
                         font-size: 14px;
                         font-weight: 600;
                         color: white;
                         text-transform: uppercase;
+
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
                     }
                 }
             }
