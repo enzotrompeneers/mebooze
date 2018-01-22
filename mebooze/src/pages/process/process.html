@@ -38,19 +38,20 @@
                       </p>
                     </div>
                   <div class="percent"></div>
-                  <div *ngIf="scale <= amount">
-                    <div class="water" [style.top]="100 - ((100 / amount) * scale ) + '%'"></div>
-                  </div>
-                  <div *ngIf="scale > amount">
-                    <div class="water" [style.top]="0"></div>
-                  </div>
+                    <div *ngIf="scale <= amount">
+                      <div class="water" [style.top]="100 - ((100 / amount) * scale ) + '%'"></div>
+                    </div>
+
+                    <div *ngIf="scale > amount">
+                      <div class="water" [style.top]="0"></div>
+                    </div>
                   <div class="glare"></div>
                 </div>
               </div>
             </div>
           </div>
           <div *ngIf="scale >= amount">
-            <button id="btnStep" class="btn-step" (click)="process(step)" ion-button>Step {{step}}</button>
+            <button id="btnStep" class="btn-step" (click)="process(step)" ion-button>Next Step</button>
           </div>
         </div>
     
