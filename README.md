@@ -6,7 +6,7 @@ Installation & Guide
 [MeBooze App (coming)](https://github.com/enzotrompeneers/mebooze/tree/master/mebooze)  
 
 ## Kickstarter Video
-[Kickstarter Video (coming)](https://github.com/enzotrompeneers/mebooze/tree/master/kickstarter-video) 
+[MeBooze Video](https://youtu.be/D3IL05QWqJg)  
 
 ## Hardware Progress Images
 [Images](https://github.com/enzotrompeneers/mebooze/tree/master/hardware-progress-images)  
