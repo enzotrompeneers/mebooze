@@ -6,7 +6,7 @@
   
   <ion-content padding>
 
-    <div style="height: 100%;" *ngIf="scale > -25;">
+    <div style="height: 100%;" *ngIf="scale > -10;">
       <div *ngIf="step == 0">
         <div class="glass-instructions">
           <h1>Put your glass or cocktail shaker on the scale.</h1>
@@ -49,7 +49,7 @@
       </div>
     </div>
 
-    <div *ngIf="scale < -10 && step != totalItems" class="offglass-instructions">
+    <div *ngIf="scale < -25 && step != totalItems" class="offglass-instructions">
       <h1>Please put your glass back on the scale.</h1>
     </div>
   </ion-content>
