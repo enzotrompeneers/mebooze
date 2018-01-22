@@ -1,6 +1,21 @@
 page-drinks {
     ion-content {
         .scroll-content {
+
+            .nodata-message {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translateX(-50%) translateY(calc(-50% - 37.5px));
+                text-align: center;
+
+                p {
+                    font-family: 'Source Sans Pro';
+                    font-size: 20px;
+                    color: $blue;
+                }
+            }
+
             button {
                 width: calc(50% - 10px);
                 float: left;

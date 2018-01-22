@@ -32,6 +32,7 @@ export class BleConnectPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BleConnectPage');
+    //this.navCtrl.(false);
     this.scan();
   }
 
@@ -76,7 +77,7 @@ export class BleConnectPage {
     console.log(JSON.stringify(device) + ' selected');
     //this.events.publish('device', device, 2);
     this.scaleService.setData(device);
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(HomePage);
   }
 
 }

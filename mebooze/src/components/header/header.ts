@@ -37,7 +37,7 @@ export class HeaderComponent {
   connection() {
     // check connected
     if(!this.connected) {
-      this.navCtrl.push(BleConnectPage);
+      this.navCtrl.setRoot(BleConnectPage);
     }
 
     if(this.connected) {
@@ -52,10 +52,6 @@ export class HeaderComponent {
     );
     this.connected = false;
     // It doens't work for android. Fucking DON
-    // this.ble.stopNotification(this.peripheral.id, '6e400001-b5a3-f393-e0a9-e50e24dcca9e', '6e400003-b5a3-f393-e0a9-e50e24dcca9e').then(
-    //   () => this.showAlert('ERROR', 'stopped notification'),
-    //   () => this.showAlert('ERROR', 'didnt stop notification')
-    // );
   }
 
   showAlert(title, message) {

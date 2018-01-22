@@ -13,6 +13,9 @@
   </div>
   <h2>Ingredients</h2>
   <div class="ingredients-wrapper">
+      <div *ngIf="data == null" class="nodata-message">
+        <p>No ingredients yet.</p>
+      </div>
       <div ion-item class="ingredients" *ngFor="let ingredients of data && data.ingredients">
         <p>{{ ingredients.name }}</p>
         <p class="amount">{{ ingredients.amount }}{{ ingredients.unit }}</p>

@@ -5,6 +5,9 @@
 </ion-header>
 
 <ion-content padding>
+  <div *ngIf="data == null" class="nodata-message">
+    <p>No categories yet.</p>
+  </div>
   <button ion-item *ngFor="let category of data" (click)="showDrinksByCategory(category.id)">
     <h1>{{ category.name }}</h1>
     <div class="overlay"></div>

@@ -5,45 +5,37 @@
   </ion-header>
   
   <ion-content padding>
-    <div *ngIf="scale > -10;">
+
+    <div style="height: 100%;" *ngIf="scale > -10;">
       <div *ngIf="step == 0">
-        <h1>Put glass on scale</h1>
-        <p>The glass is {{ scale }} grams</p>
-    
+        <div class="glass-instructions">
+          <h1>Put your glass or cocktail shaker on the scale.</h1>
+        </div>
         <div *ngIf="scale > 10">
-          <button class="btn-step" (click)="process(step)" ion-button>Start process</button>
+          <button class="btn-step" (click)="process(step)" ion-button>Start</button>
         </div>
       </div>
-  
-      <div *ngIf="step > 0">
-        <p>The glass is {{ scale }} grams</p>
-
-        <div *ngIf="step == totalItems">
-          <p>Step {{ step }} / {{ totalItems }} <br>
-          Add a slice/piece of {{ name }} <br>
-          Your cocktail is finished, enjoy!
-          </p>
+      <div style="height: 100%;" *ngIf="step > 0">
+        <div *ngIf="step == totalItems" class="finishInstructions">
+          <h1>That's it.</h1>
+          <p>To make this drink even more perfect just add a <span>slice or piece of {{ name }}</span></p>
         </div>
-    
-        <div *ngIf="step < totalItems">
+        <div style="height: 100%; width: 100%;" *ngIf="step < totalItems ">
           <div class="wrapper">
             <div class="green">
               <div class="progress">
                 <div class="inner">
                   <div class="process-details">
-                      <p>
-                        Step {{ step }} / {{ totalItems }} <br>
-                        {{ amount }} {{ unit }} <br>
-                        {{ name }}
-                      </p>
+                    <h1>{{ name }}</h1>
+                    <p class="unit">{{ scale }} / {{ amount }} {{ unit }}</p>
                     </div>
                   <div class="percent"></div>
                     <div *ngIf="scale <= amount">
-                      <div class="water" [style.top]="100 - ((100 / amount) * scale ) + '%'"></div>
+                      <div class="water" [style.top]="(100 - ((100 / amount) * scale ) + 90) + '%'"></div>
                     </div>
 
                     <div *ngIf="scale > amount">
-                      <div class="water" [style.top]="0"></div>
+                      <div class="water" [style.top]="'80%'"></div>
                     </div>
                   <div class="glare"></div>
                 </div>
@@ -51,16 +43,14 @@
             </div>
           </div>
           <div *ngIf="scale >= amount">
-            <button id="btnStep" class="btn-step" (click)="process(step)" ion-button>Next Step</button>
+            <button id="btnStep" class="btn-step" (click)="process(step)" ion-button>Next</button>
           </div>
         </div>
-    
-        
       </div>
     </div>
 
-    <div *ngIf="scale < -10;">
-      <p>Please put your glass back on the scale.</p>
+    <div *ngIf="scale < -10 && step != totalItems" class="offglass-instructions">
+      <h1>Please put your glass back on the scale.</h1>
     </div>
   </ion-content>
   

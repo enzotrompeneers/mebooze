@@ -4,6 +4,7 @@ page-ingredients {
         padding-bottom: 0 !important;
         .scroll-content {
             padding-bottom: 0 !important;
+
             .heading {
                 padding-left: 0;
                 height: 180px;
@@ -45,6 +46,21 @@ page-ingredients {
             .ingredients-wrapper {
                 height: auto;
                 padding: 0 15px;
+
+                .nodata-message {
+                    position: absolute;
+                    left: 50%;
+                    top: 70%;
+                    transform: translateX(-50%) translateY(calc(-50% - 37.5px));
+                    text-align: center;
+
+                    p {
+                        font-family: 'Source Sans Pro';
+                        font-size: 20px;
+                        color: $blue;
+                    }
+                }
+
                 .ingredients {
                     padding-left: 0;
                     width: calc(50% - 10px);

@@ -41,24 +41,6 @@ export class HomePage {
     });
   }
 
-  // onDeviceDisconnected(peripheral) {
-  //   let toast = this.toastCtrl.create({
-  //     message: 'The peripheral unexpectedly disconnected',
-  //     duration: 3000,
-  //     position: 'middle'
-  //   });
-  //   toast.present();
-  // }
-
-  // // Disconnect peripheral when leaving the page
-  // ionViewWillLeave() {
-  //   console.log('ionViewWillLeave disconnecting Bluetooth');
-  //   this.ble.disconnect(this.peripheral.id).then(
-  //     () => console.log('Disconnected ' + JSON.stringify(this.peripheral)),
-  //     () => console.log('ERROR disconnecting ' + JSON.stringify(this.peripheral))
-  //   )
-  // }
-
   setStatus(message) {
     console.log(message);
     this.ngZone.run(() => {

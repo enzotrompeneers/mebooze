@@ -1,7 +1,52 @@
   .btn-step {
-    margin: 10px auto;
-    background: black;
-    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    height: 75px;
+    width: 75px;
+    transform: translateX(-50%);
+    border-radius: 100px;
+    padding: 0;
+    background-image: url('../assets/imgs/gradient.png');
+    background-repeat: repeat-y;
+    background-size: contain;
+    z-index: 99;
+
+    font-family: 'Source Sans Pro';
+    font-weight: 900;
+
+  }
+
+  .glass-instructions, .offglass-instructions, .finishInstructions {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(calc(-50% - 37.5px));
+    text-align: center;
+
+    h1, p {
+      font-family: 'Source Sans Pro';
+    }
+  }
+
+  .finishInstructions {
+    width: 75%;
+    h1, p {
+      color: $blue;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    p {
+      font-size: 20px;
+
+      span {
+        color: $orange;
+      }
+    }
   }
 
   .wrapper {
@@ -52,18 +97,6 @@
           }
 
           .water {
-            // position: absolute;
-            // z-index: 1;
-            // width: 200%;
-            // height: 200%;
-            // left: -50%;
-            // border-radius: 100%;
-            // animation-iteration-count: infinite;
-            // animation-timing-function: linear;
-            // animation-name: spin;
-
-            // transition: all 1s ease;
-            // animation-duration: 10s;
             opacity: .4;
             position: absolute;
             top: 3%;
@@ -76,6 +109,8 @@
             transform-origin: 50% 50%;
             border-radius: 43%;
             animation: drift 3000ms infinite linear;
+            transition-property: top;
+            transition-duration: 0.5s;
           }
         }
       }
@@ -83,6 +118,7 @@
 
     .green {
       margin-top: 2px;
+      height: 100%;
       .progress {
         box-shadow: 0px 1px 3.75px 1.25px rgba(57, 62, 65, 0.25);
         border-radius: 5px;
@@ -97,8 +133,24 @@
             font-size: 1.8rem;
             font-style: bold;
 
-            p {
+            h1, p {
+              font-family: 'Source Sans Pro';
               margin: 0;
+            }
+
+            h1 {
+              color: $blue;
+              text-transform: uppercase;
+              font-size: 28px;
+              font-weight: 900;
+            }
+
+            p {
+              &.unit {
+                color: $orange;
+                font-size: 24px;
+                font-weight: bold;
+              }
             }
           }
 
