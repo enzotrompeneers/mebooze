@@ -1,7 +1,7 @@
 <button ion-button menuToggle class="menu">
   <ion-icon class="hamburger-menu" name="menu"></ion-icon>
 </button>
-<ion-title>Mebooze</ion-title>
+<ion-title (click)="toHomePage()"><span>Mebooze</span></ion-title>
 <ion-buttons end>
   <button ion-button class="bluetooth" [class.connected]="connected" (click)="connection()">
     Scan

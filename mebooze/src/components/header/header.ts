@@ -5,6 +5,7 @@ import { NavController, AlertController } from 'ionic-angular';
 import { ScaleService } from '../../services/scale/scale';
 
 import { BleConnectPage } from '../../pages/ble-connect/ble-connect';
+import { HomePage } from '../../pages/home/home';
 
 /**
  * Generated class for the HeaderComponent component.
@@ -61,6 +62,10 @@ export class HeaderComponent {
       buttons: ['OK']
     });
     alert.present();
+  }
+
+  toHomePage() {
+    this.navCtrl.setRoot(HomePage);
   }
 
 }
