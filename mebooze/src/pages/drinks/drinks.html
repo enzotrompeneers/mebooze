@@ -11,6 +11,6 @@
   <button ion-item *ngFor="let drinks of data" (click)="showIngredientByDrink(drinks.id)">
     <h1>{{ drinks.name }}</h1>
     <div class="overlay"></div>
-    <img src="../assets/imgs/drinks/thumbnails/{{ drinks.image }}" alt="{{ drinks.name }}">
+    <img src="assets/imgs/drinks/thumbnails/{{ drinks.image }}" alt="{{ drinks.name }}">
   </button>
 </ion-content>
