@@ -23,7 +23,7 @@ page-home {
                     width: 100%;
                     left: 0;
                     top: 50%;
-                    transform: translateY(-50%);
+                    transform: translateY(calc(-50% - 37.5px));
 
                     padding: 0 34px;
 

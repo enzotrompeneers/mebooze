@@ -30,6 +30,7 @@ export class ProcessPage {
   weightGlass: number;
 
   tarValue: number = 0;
+  isConnected: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, private ble: BLE, private ngZone: NgZone, private cocktailService: CocktailService, private scaleService: ScaleService) {
     let device = this.scaleService.getData();
