@@ -49,7 +49,7 @@
       </div>
     </div>
 
-    <div *ngIf="scale < -25 && step != totalItems" class="offglass-instructions">
+    <div *ngIf="scale < -25 || step != totalItems" class="offglass-instructions">
       <h1>Please put your glass back on the scale.</h1>
     </div>
   </ion-content>
