@@ -4,6 +4,7 @@ import { BLE } from '@ionic-native/ble';
 
 import { CocktailService } from '../../services/cocktail/cocktail';
 import { ScaleService } from '../../services/scale/scale';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -78,13 +79,10 @@ export class ProcessPage {
     this.amount = this.data && this.data.ingredients[step].amount;
     this.unit = this.data && this.data.ingredients[step].unit;
     this.name = this.data && this.data.ingredients[step].name;
-    
-    
+  }
 
-    //if(step > this.totalItems) {
-      // hide button if there are no more steps
-      //document.getElementById('btnStep').style.visibility='hidden';
-    //}
+  toHomePage() {
+    this.navCtrl.setRoot(HomePage);
   }
 
   ionViewDidLoad() {
