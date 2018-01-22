@@ -1,4 +1,4 @@
-  .btn-step {
+  .btn-step, .home_btn {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -26,6 +26,25 @@
 
     h1, p {
       font-family: 'Source Sans Pro';
+    }
+  }
+
+  .home_btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      background-image: url('/assets/imgs/icons/house-white.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      text-indent: -9999px;
+      width: 25px;
+      height: 25px;
     }
   }
 
