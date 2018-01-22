@@ -2,7 +2,6 @@
 Smart cocktail shaker
 
 ## Ionic Application
-Installation & Guide  
 [MeBooze App (coming)](https://github.com/enzotrompeneers/mebooze/tree/master/mebooze)  
 
 ## Kickstarter Video
@@ -21,3 +20,7 @@ Installation & Guide
 
 ## Arduino 
 [Arduino (coming)](https://github.com/enzotrompeneers/mebooze/tree/master/arduino)  
+
+### Moodboard
+[Moodboard](https://github.com/enzotrompeneers/mebooze/tree/master/moodboard)  
+
