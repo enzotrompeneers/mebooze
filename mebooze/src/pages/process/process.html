@@ -5,19 +5,6 @@
   </ion-header>
   
   <ion-content padding>
-
-    <div>
-      <div class="finishInstructions">
-        <h1>That's it.</h1>
-        <p>To make this drink even more perfect just add a
-          <span>slice or piece of {{ name }}</span>
-        </p>
-      </div>
-      <button class="home_btn" (click)="toHomePage()" ion-button>
-        <span>home</span>
-      </button>
-    </div>
-
     <div style="height: 100%;" *ngIf="scale > -10;">
       <div *ngIf="step == 0">
         <div class="glass-instructions">
@@ -69,9 +56,9 @@
       </div>
     </div>
 
-    <div *ngIf="scale < -25 && step != totalItems" class="offglass-instructions">
+    <!-- <div *ngIf="scale < -25 && step != totalItems" class="offglass-instructions">
       <h1>Please put your glass back on the scale.</h1>
-    </div>
+    </div> -->
 
     <div *ngIf="scale < -25 && step == totalItems" class="offglass-instructions">
         <button class="home_btn" (click)="toHomePage()" ion-button>
