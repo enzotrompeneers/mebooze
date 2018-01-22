@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <div *ngIf="data == null" class="nodata-message">
+  <div *ngIf="data == {}" class="nodata-message">
     <p>No drinks yet.</p>
   </div>
   <button ion-item *ngFor="let drinks of data" (click)="showIngredientByDrink(drinks.id)">
