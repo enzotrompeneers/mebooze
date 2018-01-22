@@ -24,7 +24,7 @@
               <span>slice or piece of {{ name }}</span>
             </p>
           </div>
-          <button id="home_btn" (click)="toHomePage()" ion-button>
+          <button class="home_btn" (click)="toHomePage()" ion-button>
             <span>home</span>
           </button>
         </div>
@@ -60,6 +60,12 @@
     <div *ngIf="scale < -25 && step != totalItems" class="offglass-instructions">
       <h1>Please put your glass back on the scale.</h1>
     </div>
+
+    <div *ngIf="scale < -25 && step == totalItems" class="offglass-instructions">
+        <button class="home_btn" (click)="toHomePage()" ion-button>
+            <span>home</span>
+          </button>
+      </div>
   </ion-content>
   
   <script>
